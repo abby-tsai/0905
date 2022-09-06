@@ -1141,26 +1141,43 @@ function onYouTubeIframeAPIReady() {
 let animate_block_1 = document.querySelector("#animate_block_1");
 let offset_1 = animate_block_1.getBoundingClientRect();
 
+let animate_block_2 = document.querySelector("#animate_block_2");
+let offset_2 = animate_block_2.getBoundingClientRect();
+
 // 物件只要在畫面的範圍，就跑動畫
 if (offset_1.top <= window.innerHeight) {
-  animateOn();
+  animateOn_1();
+}
+if (offset_2.top <= window.innerHeight) {
+  animateOn_2();
 }
 
 // 當滾動畫面
 document.addEventListener("scroll", function () {
   // 指定物件 和 整個網站的最頂端 的距離
   let offset_1 = animate_block_1.getBoundingClientRect();
+  let offset_2 = animate_block_2.getBoundingClientRect();
 
   if (offset_1.top <= window.innerHeight || offset_1.bottom <= 0) {
     // 如果 物件的頂部 到 目前畫面頂部 的距離 小於 畫面高度 (＝如果往下滑碰到物件的頂部) 就跑動畫
     // 或者
     // 如果 物件的底部 到 目前畫面頂部 的距離 小於 0px (＝如果畫面是在物件以下的區域) 就跑動畫
-    animateOn();
+    animateOn_1();
+  }
+  if (offset_2.top <= window.innerHeight || offset_2.bottom <= 0) {
+    // 如果 物件的頂部 到 目前畫面頂部 的距離 小於 畫面高度 (＝如果往下滑碰到物件的頂部) 就跑動畫
+    // 或者
+    // 如果 物件的底部 到 目前畫面頂部 的距離 小於 0px (＝如果畫面是在物件以下的區域) 就跑動畫
+    animateOn_2();
   }
 });
 
-function animateOn() {
+function animateOn_1() {
   animate_block_1.classList.add("on");
+}
+
+function animateOn_2() {
+  animate_block_2.classList.add("on");
 }
 // end *------------------
 
