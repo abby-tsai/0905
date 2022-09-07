@@ -20889,7 +20889,6 @@ body.open_lightbox {
 }
 
 .animate-block-2.on .circle-list li {
-  opacity: 0;
   animation: circleFadeIn linear forwards;
   animation-duration: var(--c-duration);
   animation-delay: var(--c-delay);
