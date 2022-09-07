@@ -21693,7 +21693,7 @@ body.open_lightbox {
 
 @media only screen and (max-width: 767px) {
   .animate-block-1 .letter-one {
-    height: 43px;
+    height: 40px;
   }
   .circle-box {
     transform: scale(1);
