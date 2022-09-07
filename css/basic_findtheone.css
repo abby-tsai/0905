@@ -20791,6 +20791,25 @@ body.open_lightbox {
   background: #e95a5f;
 }
 
+.animate-block-1 .letter-one {
+  height: 60px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.animate-block-1 .letter-one .letter{
+  --ch:-20;
+}
+.animate-block-1.on .letter-one .letter {
+  animation: scroll 1.3s 0s ease forwards;
+}
+@keyframes scroll {
+  to{
+    transform: translateY(calc(var(--ch) * 100%));
+  }
+}
+
 .circle-box {
   position: relative;
   display: flex;
@@ -21157,8 +21176,8 @@ body.open_lightbox {
   }
 
   100% {
-    opacity: 1;
     transform: var(--c-rotate-a);
+    opacity: 1;
   }
 }
 
@@ -21336,6 +21355,9 @@ body.open_lightbox {
 }
 
 @media only screen and (max-width: 1280px) {
+  .animate-block-1 .letter-one {
+    height: 43px;
+  }
   .circle-box {
     transform: scale(0.7);
     height: 620px;
@@ -21506,6 +21528,9 @@ body.open_lightbox {
 }
 
 @media only screen and (max-width: 991px) {
+  .animate-block-1 .letter-one {
+    height: 30px;
+  }
   .circle-box {
     transform: scale(0.55);
     height: 480px;
@@ -21667,6 +21692,9 @@ body.open_lightbox {
 }
 
 @media only screen and (max-width: 767px) {
+  .animate-block-1 .letter-one {
+    height: 43px;
+  }
   .circle-box {
     transform: scale(1);
     height: 580px;
