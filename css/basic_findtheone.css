@@ -20900,7 +20900,7 @@ body.open_lightbox {
 .circle-list li {
   position: absolute;
   transition: .3s ease all;
-
+  opacity: 0;
 
   --c-duration: .2s;
   --l-duration: .2s;
@@ -21176,8 +21176,8 @@ body.open_lightbox {
   }
 
   100% {
-    transform: var(--c-rotate-a);
     opacity: 1;
+    transform: var(--c-rotate-a);
   }
 }
 
