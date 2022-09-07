@@ -21816,8 +21816,8 @@ body.open_lightbox {
   /* circle 3 */
   .circle-list li.cir-3 {
     background-position: -753px -2px;
-    top: calc(50% - 305px);
-    left: calc(50% - 179px);
+    top: calc(50% - 306px);
+    left: calc(50% - 158px);
   }
 
   .circle-list li.cir-3 .line {
