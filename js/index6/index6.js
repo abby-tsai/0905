@@ -1099,6 +1099,12 @@ function onYouTubeIframeAPIReady() {
     video_1_lightboxTarget.classList.add('show');
     video_1_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox')
+
+    var playerElement = document.querySelector("#video_iframe_1");
+    var requestFullScreen = playerElement.requestFullScreen || playerElement.mozRequestFullScreen || playerElement.webkitRequestFullScreen;
+    if (requestFullScreen) {
+      requestFullScreen.bind(playerElement)();
+    }
   });
   video_1_lightboxClose.addEventListener("click", function () {
     player_1.pauseVideo();
