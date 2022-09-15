@@ -506,8 +506,9 @@ function onYouTubeIframeAPIReady() {
 
   video_1_btnLightbox.addEventListener("click", function () {
     player_1.playVideo();
-    if (iOS == true) {
-      video_1_lightboxTarget.classList.add('show');
+    video_1_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_1_lightboxTarget.classList.remove('show');
     }
     video_1_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
@@ -515,9 +516,7 @@ function onYouTubeIframeAPIReady() {
   });
   video_1_lightboxClose.addEventListener("click", function () {
     player_1.pauseVideo();
-    if (iOS == true) {
-      video_1_lightboxTarget.classList.remove('show');
-    }
+    video_1_lightboxTarget.classList.remove('show');
     video_1_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
@@ -525,8 +524,9 @@ function onYouTubeIframeAPIReady() {
 
   video_2_btnLightbox.addEventListener("click", function () {
     player_2.playVideo();
-    if (iOS == true) {
-      video_2_lightboxTarget.classList.add('show');
+    video_2_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_2_lightboxTarget.classList.remove('show');
     }
     video_2_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
@@ -534,9 +534,7 @@ function onYouTubeIframeAPIReady() {
   });
   video_2_lightboxClose.addEventListener("click", function () {
     player_2.pauseVideo();
-    if (iOS == true) {
-      video_2_lightboxTarget.classList.remove('show');
-    }
+    video_2_lightboxTarget.classList.remove('show');
     video_2_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
@@ -544,8 +542,9 @@ function onYouTubeIframeAPIReady() {
 
   video_3_btnLightbox.addEventListener("click", function () {
     player_3.playVideo();
-    if (iOS == true) {
-      video_3_lightboxTarget.classList.add('show');
+    video_3_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_3_lightboxTarget.classList.remove('show');
     }
     video_3_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
@@ -553,9 +552,7 @@ function onYouTubeIframeAPIReady() {
   });
   video_3_lightboxClose.addEventListener("click", function () {
     player_3.pauseVideo();
-    if (iOS == true) {
-      video_3_lightboxTarget.classList.remove('show');
-    }
+    video_3_lightboxTarget.classList.remove('show');
     video_3_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
@@ -565,17 +562,17 @@ function onYouTubeIframeAPIReady() {
 // 開啟全螢幕
 var requestFullscreen = function (ele) {
   if (ele.requestFullscreen) {
-    ele.requestFullscreen();
+    ele.requestFullscreen({ navigationUI: 'hide' });
   } else if (ele.webkitRequestFullscreen) {
-    ele.webkitRequestFullscreen();
+    ele.webkitRequestFullscreen({ navigationUI: 'hide' });
   } else if (ele.mozRequestFullScreen) {
-    ele.mozRequestFullScreen();
+    ele.mozRequestFullScreen({ navigationUI: 'hide' });
   } else if (ele.msRequestFullscreen) {
-    ele.msRequestFullscreen();
+    ele.msRequestFullscreen({ navigationUI: 'hide' });
   }
 };
 
-// 關密全螢幕
+// 關閉全螢幕
 var exitFullscreen = function () {
   if (document.exitFullscreen) {
     document.exitFullscreen();
@@ -608,6 +605,7 @@ function closeVideo_phoneSystem() {
     exitFullscreen();
   }
 }
+
 
 // 監聽手機轉向
 window.addEventListener('orientationchange', doOnOrientationChange);
