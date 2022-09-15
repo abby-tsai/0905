@@ -525,14 +525,18 @@ function onYouTubeIframeAPIReady() {
 
   video_2_btnLightbox.addEventListener("click", function () {
     player_2.playVideo();
-    video_2_lightboxTarget.classList.add('show');
+    if (iOS == true) {
+      video_2_lightboxTarget.classList.add('show');
+    }
     video_2_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
     openVideo_phoneSystem(video_2_lightboxBlock, video_2_lightboxTarget);
   });
   video_2_lightboxClose.addEventListener("click", function () {
     player_2.pauseVideo();
-    video_2_lightboxTarget.classList.remove('show');
+    if (iOS == true) {
+      video_2_lightboxTarget.classList.remove('show');
+    }
     video_2_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
@@ -540,14 +544,18 @@ function onYouTubeIframeAPIReady() {
 
   video_3_btnLightbox.addEventListener("click", function () {
     player_3.playVideo();
-    video_3_lightboxTarget.classList.add('show');
+    if (iOS == true) {
+      video_3_lightboxTarget.classList.add('show');
+    }
     video_3_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
     openVideo_phoneSystem(video_3_lightboxBlock, video_3_lightboxTarget);
   });
   video_3_lightboxClose.addEventListener("click", function () {
     player_3.pauseVideo();
-    video_3_lightboxTarget.classList.remove('show');
+    if (iOS == true) {
+      video_3_lightboxTarget.classList.remove('show');
+    }
     video_3_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
