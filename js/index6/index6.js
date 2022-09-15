@@ -506,14 +506,18 @@ function onYouTubeIframeAPIReady() {
 
   video_1_btnLightbox.addEventListener("click", function () {
     player_1.playVideo();
-    video_1_lightboxTarget.classList.add('show');
+    if (iOS == true) {
+      video_1_lightboxTarget.classList.add('show');
+    }
     video_1_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox');
     openVideo_phoneSystem(video_1_lightboxBlock, video_1_lightboxTarget);
   });
   video_1_lightboxClose.addEventListener("click", function () {
     player_1.pauseVideo();
-    video_1_lightboxTarget.classList.remove('show');
+    if (iOS == true) {
+      video_1_lightboxTarget.classList.remove('show');
+    }
     video_1_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
@@ -602,46 +606,6 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 
 let height = window.innerHeight;
 // 判斷手機當前方向
-// function doOnOrientationChange() {
-//   switch (window.orientation) {
-//     case -90:
-//     case 90:
-//       // 手機轉橫向
-//       video_1_lightboxTarget.classList.add('is-landscape');
-//       video_2_lightboxTarget.classList.add('is-landscape');
-//       video_3_lightboxTarget.classList.add('is-landscape');
-
-//       document.querySelector("#video_iframe_1").style.height = height + "px";
-//       document.querySelector("#video_iframe_2").style.height = height + "px";
-//       document.querySelector("#video_iframe_3").style.height = height + "px";
-//       window.addEventListener('resize', () => {
-//         height = window.innerHeight;
-//         document.querySelector("#video_iframe_1").style.height = height + "px";
-//         document.querySelector("#video_iframe_2").style.height = height + "px";
-//         document.querySelector("#video_iframe_3").style.height = height + "px";
-//       });
-//       break;
-//     default:
-//       // 手機轉直向
-//       video_1_lightboxTarget.classList.remove('is-landscape');
-//       video_2_lightboxTarget.classList.remove('is-landscape');
-//       video_3_lightboxTarget.classList.remove('is-landscape');
-
-//       document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
-//       document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
-//       document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-//       window.addEventListener('resize', () => {
-//         if (iOS == true) {
-//           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
-//           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
-//           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-//         }
-//       });
-
-//       break;
-//   }
-// }
-
 function doOnOrientationChange() {
   switch (window.orientation) {
     case -90:
@@ -683,8 +647,6 @@ function doOnOrientationChange() {
       break;
   }
 }
-
-// document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
 
 
 // end *------------------
