@@ -14,6 +14,7 @@ if (android == true) {
 } else if (iOS == true) {
   document.querySelector("#test").innerHTML = '您的裝置是 iOS'
   console.log('您的裝置是 iOS');
+  document.querySelector("#test2").innerHTML = "我轉直向了";
   window.addEventListener("orientationchange", function() {
     if(screen.orientation.angle == 90 || screen.orientation.angle == -90){
       document.querySelector("#test2").innerHTML = "我轉橫向了";
