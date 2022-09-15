@@ -610,7 +610,7 @@ function doOnOrientationChange() {
       video_1_lightboxTarget.classList.add('is-landscape');
       video_2_lightboxTarget.classList.add('is-landscape');
       video_3_lightboxTarget.classList.add('is-landscape');
-      
+
       document.querySelector("#video_iframe_1").style.height = height + "px";
       window.addEventListener('resize', () => {
         height = window.innerHeight;
@@ -623,7 +623,9 @@ function doOnOrientationChange() {
       video_2_lightboxTarget.classList.remove('is-landscape');
       video_3_lightboxTarget.classList.remove('is-landscape');
       window.addEventListener('resize', () => {
-        document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+        if (iOS == true) {
+          document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+        }
       });
 
       break;
