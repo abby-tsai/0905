@@ -622,6 +622,8 @@ function doOnOrientationChange() {
       video_1_lightboxTarget.classList.remove('is-landscape');
       video_2_lightboxTarget.classList.remove('is-landscape');
       video_3_lightboxTarget.classList.remove('is-landscape');
+      
+      document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
       window.addEventListener('resize', () => {
         if (iOS == true) {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
