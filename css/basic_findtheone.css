@@ -18746,15 +18746,16 @@ body .headerBasic>li.btn.android a {
   margin: auto;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 0;
+  right: 0;
   background-color: white;
-  box-shadow: 0px 0px 8px rgb(0 0 0 / 30%);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   text-align: left;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -23926,8 +23927,6 @@ body.open_lightbox {
   .lightboxTarget .content-box iframe {
     width: 100vw;
     height: 100vh;
-    /* z-index: -1;
-    position: relative; */
   }
 
   .lightboxClose {
@@ -23943,7 +23942,7 @@ body.open_lightbox {
   }
 
   .lightboxTarget.is-ios .content-box iframe {
-    height: calc(100vh - 150px);
+    /* height: calc(100vh - 150px); */
   }
 
   .lightboxTarget.is-ios .lightboxClose {
@@ -23965,8 +23964,8 @@ body.open_lightbox {
   }
 
   .lightboxTarget.is-ios .content-box {
-    transform: translate(-50%, 0);
-    top: 70px;
+    /* transform: translate(-50%, 0);
+    top: 70px; */
   }
 
   .lightboxTarget.is-ios.is-landscape .content-box {
