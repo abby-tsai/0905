@@ -431,10 +431,6 @@ let ua = navigator.userAgent;
 let android = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; // android
 let iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
 
-// 監聽手機轉向
-window.addEventListener('orientationchange', doOnOrientationChange);
-doOnOrientationChange(); // 一開始要先判斷一次初始的轉向
-
 function onYouTubeIframeAPIReady() {
 
   var player_1;
@@ -580,31 +576,16 @@ var exitFullscreen = function () {
   }
 };
 
-// 判斷手機當前方向
-function doOnOrientationChange() {
-  switch (window.orientation) {
-    case -90:
-    case 90:
-      // 手機轉橫向
-      video_1_lightboxTarget.classList.add('is-landscape');
-      break;
-    default:
-      // 手機轉直向
-      video_1_lightboxTarget.classList.remove('is-landscape');
-      break;
-  }
-}
-
 // 點擊播放影片按鈕，判斷裝置
-function openVideo_phoneSystem(ightboxBlock, lightboxTarget) {
+function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
   if (android == true && window.innerWidth < 768) {
     // 裝置是 Android
     lightboxTarget.classList.remove('is-ios');
-    requestFullscreen(ightboxBlock);
+    requestFullscreen(lightboxBlock);
   } else if (iOS == true) {
     // 裝置是 iOS
     lightboxTarget.classList.add('is-ios');
-    doOnOrientationChange();
+    doOnOrientationChange(lightboxTarget);
   }
 }
 
@@ -613,6 +594,27 @@ function closeVideo_phoneSystem() {
   if (android == true && window.innerWidth < 768) {
     // 裝置是 Android
     exitFullscreen();
+  }
+}
+
+// 監聽手機轉向
+window.addEventListener('orientationchange', doOnOrientationChange);
+// 判斷手機當前方向
+function doOnOrientationChange() {
+  switch (window.orientation) {
+    case -90:
+    case 90:
+      // 手機轉橫向
+      video_1_lightboxTarget.classList.add('is-landscape');
+      video_2_lightboxTarget.classList.add('is-landscape');
+      video_3_lightboxTarget.classList.add('is-landscape');
+      break;
+    default:
+      // 手機轉直向
+      video_1_lightboxTarget.classList.remove('is-landscape');
+      video_2_lightboxTarget.classList.remove('is-landscape');
+      video_3_lightboxTarget.classList.remove('is-landscape');
+      break;
   }
 }
 
