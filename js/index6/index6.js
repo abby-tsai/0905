@@ -612,9 +612,13 @@ function doOnOrientationChange() {
       video_3_lightboxTarget.classList.add('is-landscape');
 
       document.querySelector("#video_iframe_1").style.height = height + "px";
+      document.querySelector("#video_iframe_2").style.height = height + "px";
+      document.querySelector("#video_iframe_3").style.height = height + "px";
       window.addEventListener('resize', () => {
         height = window.innerHeight;
         document.querySelector("#video_iframe_1").style.height = height + "px";
+        document.querySelector("#video_iframe_2").style.height = height + "px";
+        document.querySelector("#video_iframe_3").style.height = height + "px";
       });
       break;
     default:
@@ -624,9 +628,13 @@ function doOnOrientationChange() {
       video_3_lightboxTarget.classList.remove('is-landscape');
 
       document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+      document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+      document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
       window.addEventListener('resize', () => {
         if (iOS == true) {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
         }
       });
 
