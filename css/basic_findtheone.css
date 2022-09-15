@@ -23964,6 +23964,11 @@ body.open_lightbox {
     left: 100%;
   }
 
+  .lightboxTarget.is-ios .content-box {
+    transform: translate(-50%, 0);
+    top: 70px;
+  }
+
   .lightboxTarget.is-ios.is-landscape .content-box {
     top: 0;
     transform: translate(-50%, 0);
