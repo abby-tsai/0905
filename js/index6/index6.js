@@ -1109,23 +1109,52 @@ function onYouTubeIframeAPIReady() {
     }
   });
 
+  var requestFullscreen = function (ele) {
+    if (ele.requestFullscreen) {
+      ele.requestFullscreen();
+    } else if (ele.webkitRequestFullscreen) {
+      ele.webkitRequestFullscreen();
+    } else if (ele.mozRequestFullScreen) {
+      ele.mozRequestFullScreen();
+    } else if (ele.msRequestFullscreen) {
+      ele.msRequestFullscreen();
+    }
+  };
+  
+  var exitFullscreen = function () {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  };
+
   video_1_btnLightbox.addEventListener("click", function () {
     player_1.playVideo();
     video_1_lightboxTarget.classList.add('show');
     video_1_btnLightbox.classList.add('active');
     document.querySelector("body").classList.add('open_lightbox')
 
-    var playerElement = document.querySelector("#video_iframe_1");
-    var requestFullScreen = playerElement.requestFullScreen || playerElement.mozRequestFullScreen || playerElement.webkitRequestFullScreen;
-    if (requestFullScreen) {
-      requestFullScreen.bind(playerElement)();
-    }
+    var playerElement = document.querySelector("#video_lightbox_1");
+    requestFullscreen(playerElement);
+
+    // var playerElement = document.querySelector("#video_lightbox_1");
+    // var requestFullScreen = playerElement.requestFullScreen || playerElement.mozRequestFullScreen || playerElement.webkitRequestFullScreen;
+    // if (requestFullScreen) {
+    //   requestFullScreen.bind(playerElement)();
+    // }
   });
   video_1_lightboxClose.addEventListener("click", function () {
     player_1.pauseVideo();
     video_1_lightboxTarget.classList.remove('show');
     video_1_btnLightbox.classList.remove('active');
     document.querySelector("body").classList.remove('open_lightbox')
+
+    exitFullscreen();
   });
 
   video_2_btnLightbox.addEventListener("click", function () {

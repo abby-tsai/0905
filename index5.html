@@ -1073,10 +1073,10 @@
               </span>
             </button>
             <div class="lightboxTarget">
-              <div class="content-box">
+              <div class="content-box" id="video_lightbox_1">
                 <div id="video_iframe_1"></div>
+                <button class="lightboxClose" type="button">X</button>
               </div>
-              <button class="lightboxClose" type="button">X</button>
             </div>
           </div>
         </div>
@@ -2558,11 +2558,11 @@
       $('.popCloseBtn').click(function () {
         $('.popBlock').fadeOut();
       });
-      $(document).click(function (e) {
-        if (e.target.className.includes('popBlock')) {
-          $('.popBlock').fadeOut();
-        }
-      })
+      // $(document).click(function (e) {
+      //   if (e.target.className.includes('popBlock')) {
+      //     $('.popBlock').fadeOut();
+      //   }
+      // })
     });
   </script>
 </body>
