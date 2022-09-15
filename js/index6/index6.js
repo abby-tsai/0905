@@ -599,6 +599,8 @@ function closeVideo_phoneSystem() {
 
 // 監聽手機轉向
 window.addEventListener('orientationchange', doOnOrientationChange);
+
+let height = window.innerHeight;
 // 判斷手機當前方向
 function doOnOrientationChange() {
   switch (window.orientation) {
@@ -608,15 +610,31 @@ function doOnOrientationChange() {
       video_1_lightboxTarget.classList.add('is-landscape');
       video_2_lightboxTarget.classList.add('is-landscape');
       video_3_lightboxTarget.classList.add('is-landscape');
+      
+      document.querySelector("#video_iframe_1").style.height = height + "px";
+      window.addEventListener('resize', () => {
+        height = window.innerHeight;
+        document.querySelector("#video_iframe_1").style.height = height + "px";
+      });
       break;
     default:
       // 手機轉直向
       video_1_lightboxTarget.classList.remove('is-landscape');
       video_2_lightboxTarget.classList.remove('is-landscape');
       video_3_lightboxTarget.classList.remove('is-landscape');
+      window.addEventListener('resize', () => {
+        document.querySelector("#video_iframe_1").style.height = "calc(100vh - 150px)";
+      });
+
       break;
   }
 }
+
+// if (video_1_lightboxTarget.className.includes('is-landscape')) {
+
+// }
+
+
 
 // end *------------------
 
