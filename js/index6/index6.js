@@ -4,9 +4,23 @@ var iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
 if (android == true) {
   document.querySelector("#test").innerHTML = '您的裝置是 Android'
   console.log('您的裝置是 Android');
+  window.addEventListener("orientationchange", function() {
+    if(screen.orientation.angle == 90 || screen.orientation.angle == -90){
+      document.querySelector("#test2").innerHTML = "我轉橫向了";
+    } else {
+      document.querySelector("#test2").innerHTML = "我轉直向了";
+    }
+  });
 } else if (iOS == true) {
   document.querySelector("#test").innerHTML = '您的裝置是 iOS'
   console.log('您的裝置是 iOS');
+  window.addEventListener("orientationchange", function() {
+    if(screen.orientation.angle == 90 || screen.orientation.angle == -90){
+      document.querySelector("#test2").innerHTML = "我轉橫向了";
+    } else {
+      document.querySelector("#test2").innerHTML = "我轉直向了";
+    }
+  });
 } else {
   document.querySelector("#test").innerHTML = '您目前非行動裝置'
   console.log('您目前非行動裝置');
