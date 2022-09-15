@@ -1050,7 +1050,7 @@ function onYouTubeIframeAPIReady() {
       showinfo: 0, // 隱藏影片標題
       modestbranding: 0, // 隱藏YouTube Logo
       loop: 0, // 重覆播放
-      fs: 0, // 隱藏全螢幕按鈕
+      fs: 1, // 隱藏全螢幕按鈕
       cc_load_policty: 0, // 隱藏字幕
       iv_load_policy: 3, // 隱藏影片註解
       autohide: 0 // 影片播放時，隱藏影片控制列
