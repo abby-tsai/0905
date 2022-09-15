@@ -1,3 +1,18 @@
+var ua = navigator.userAgent;
+var android = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; // android
+var iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
+if (android == true) {
+  document.querySelector("#test").innerHTML = '您的裝置是 Android'
+  console.log('您的裝置是 Android');
+} else if (iOS == true) {
+  document.querySelector("#test").innerHTML = '您的裝置是 iOS'
+  console.log('您的裝置是 iOS');
+} else {
+  document.querySelector("#test").innerHTML = '您目前非行動裝置'
+  console.log('您目前非行動裝置');
+}
+
+
 // 21對成功案例 輪播 - 電腦版
 let successSlider = document.getElementById('successSlider'),
   successSliderItems = document.getElementById('successSlides'),
