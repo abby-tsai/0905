@@ -4,28 +4,34 @@ var iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
 if (android == true) {
   document.querySelector("#test").innerHTML = '您的裝置是 Android'
   console.log('您的裝置是 Android');
-  window.addEventListener("orientationchange", function() {
-    if(screen.orientation.angle == 90 || screen.orientation.angle == -90){
-      document.querySelector("#test2").innerHTML = "我轉橫向了";
-    } else {
-      document.querySelector("#test2").innerHTML = "我轉直向了";
-    }
-  });
 } else if (iOS == true) {
   document.querySelector("#test").innerHTML = '您的裝置是 iOS'
   console.log('您的裝置是 iOS');
   document.querySelector("#test2").innerHTML = "我轉直向了";
-  window.addEventListener("orientationchange", function() {
-    if(screen.orientation.angle == 90 || screen.orientation.angle == -90){
-      document.querySelector("#test2").innerHTML = "我轉橫向了";
-    } else {
-      document.querySelector("#test2").innerHTML = "我轉直向了";
-    }
-  });
+  doOnOrientationChange();
 } else {
   document.querySelector("#test").innerHTML = '您目前非行動裝置'
   console.log('您目前非行動裝置');
 }
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+function doOnOrientationChange()
+{
+  switch(window.orientation) 
+  {  
+    case -90:
+    case 90:
+      document.querySelector("#test2").innerHTML = "我轉橫向了";
+      break; 
+    default:
+      document.querySelector("#test2").innerHTML = "我轉直向了";
+      break; 
+  }
+}
+
+
+// Initial execution if needed
+
 
 
 // 21對成功案例 輪播 - 電腦版
