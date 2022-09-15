@@ -602,6 +602,46 @@ window.addEventListener('orientationchange', doOnOrientationChange);
 
 let height = window.innerHeight;
 // 判斷手機當前方向
+// function doOnOrientationChange() {
+//   switch (window.orientation) {
+//     case -90:
+//     case 90:
+//       // 手機轉橫向
+//       video_1_lightboxTarget.classList.add('is-landscape');
+//       video_2_lightboxTarget.classList.add('is-landscape');
+//       video_3_lightboxTarget.classList.add('is-landscape');
+
+//       document.querySelector("#video_iframe_1").style.height = height + "px";
+//       document.querySelector("#video_iframe_2").style.height = height + "px";
+//       document.querySelector("#video_iframe_3").style.height = height + "px";
+//       window.addEventListener('resize', () => {
+//         height = window.innerHeight;
+//         document.querySelector("#video_iframe_1").style.height = height + "px";
+//         document.querySelector("#video_iframe_2").style.height = height + "px";
+//         document.querySelector("#video_iframe_3").style.height = height + "px";
+//       });
+//       break;
+//     default:
+//       // 手機轉直向
+//       video_1_lightboxTarget.classList.remove('is-landscape');
+//       video_2_lightboxTarget.classList.remove('is-landscape');
+//       video_3_lightboxTarget.classList.remove('is-landscape');
+
+//       document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+//       document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+//       document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+//       window.addEventListener('resize', () => {
+//         if (iOS == true) {
+//           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+//           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+//           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+//         }
+//       });
+
+//       break;
+//   }
+// }
+
 function doOnOrientationChange() {
   switch (window.orientation) {
     case -90:
@@ -611,15 +651,17 @@ function doOnOrientationChange() {
       video_2_lightboxTarget.classList.add('is-landscape');
       video_3_lightboxTarget.classList.add('is-landscape');
 
-      document.querySelector("#video_iframe_1").style.height = height + "px";
-      document.querySelector("#video_iframe_2").style.height = height + "px";
-      document.querySelector("#video_iframe_3").style.height = height + "px";
-      window.addEventListener('resize', () => {
-        height = window.innerHeight;
+      if (iOS == true) {
         document.querySelector("#video_iframe_1").style.height = height + "px";
         document.querySelector("#video_iframe_2").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
-      });
+        window.addEventListener('resize', () => {
+          height = window.innerHeight;
+          document.querySelector("#video_iframe_1").style.height = height + "px";
+          document.querySelector("#video_iframe_2").style.height = height + "px";
+          document.querySelector("#video_iframe_3").style.height = height + "px";
+        });
+      }
       break;
     default:
       // 手機轉直向
@@ -627,22 +669,22 @@ function doOnOrientationChange() {
       video_2_lightboxTarget.classList.remove('is-landscape');
       video_3_lightboxTarget.classList.remove('is-landscape');
 
-      document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
-      document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
-      document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-      window.addEventListener('resize', () => {
-        if (iOS == true) {
+      if (iOS == true) {
+        document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+        window.addEventListener('resize', () => {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-        }
-      });
+        });
+      }
 
       break;
   }
 }
 
-document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+// document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
 
 
 // end *------------------
