@@ -1,8 +1,26 @@
-"use strict";
-
-// 1920px ＆ 767px 電腦版輪播 *------------------
-
 // 21對成功案例 輪播 - 1920px 電腦版
+let successSlider = document.getElementById('successSlider'),
+  successSliderItems = document.getElementById('successSlides'),
+  successprev = document.getElementById('successprev'),
+  successnext = document.getElementById('successnext'),
+  successSlidesLi = document.querySelectorAll("#successSlides .slide .lists > ul > li"),
+  successDots = document.querySelector("#successSlider .dotsList");
+
+slider(successSlider, successSliderItems, successprev, successnext, successSlidesLi, successDots);
+// end 21對成功案例 輪播 - 1920px 電腦版
+
+// 21個見面後的感想 輪播 - 1920px 電腦版
+let feedbackSlider = document.getElementById('feedbackSlider'),
+  feedbackSliderItems = document.getElementById('feedbackSlides'),
+  feedbackprev = document.getElementById('feedbackprev'),
+  feedbacknext = document.getElementById('feedbacknext'),
+  feedbackSlidesLi = document.querySelectorAll("#feedbackSlides .slide .lists > ul > li"),
+  feedbackDots = document.querySelector("#feedbackSlider .dotsList");
+
+slider(feedbackSlider, feedbackSliderItems, feedbackprev, feedbacknext, feedbackSlidesLi, feedbackDots);
+// end 21個見面後的感想 輪播 - 1920px 電腦版
+
+// 21對成功案例 輪播 - 1460px 電腦版
 let success_laptop_Slider = document.getElementById('success_laptop_Slider'),
   success_laptop_SliderItems = document.getElementById('success_laptop_Slides'),
   success_laptop_prev = document.getElementById('success_laptop_prev'),
@@ -10,17 +28,17 @@ let success_laptop_Slider = document.getElementById('success_laptop_Slider'),
   success_laptop_SlidesLi = document.querySelectorAll("#success_laptop_Slides .slide .lists > ul > li"),
   success_laptop_Dots = document.querySelector("#success_laptop_Slider .dotsList");
 slider(success_laptop_Slider, success_laptop_SliderItems, success_laptop_prev, success_laptop_next, success_laptop_SlidesLi, success_laptop_Dots);
-// end 21對成功案例 輪播 - 1920px 電腦版
+// end 21對成功案例 輪播 - 1460px 電腦版
 
-// 21個見面後的感想 輪播 - 1920px 電腦版
-let feedback_laptop_Slider = document.getElementById('feedback_laptop_Slider'),
-  feedback_laptop_SliderItems = document.getElementById('feedback_laptop_Slides'),
-  feedback_laptop_prev = document.getElementById('feedback_laptop_prev'),
-  feedback_laptop_next = document.getElementById('feedback_laptop_next'),
-  feedback_laptop_SlidesLi = document.querySelectorAll("#feedback_laptop_Slides .slide .lists > ul > li"),
-  feedback_laptop_Dots = document.querySelector("#feedback_laptop_Slider .dotsList");
-slider(feedback_laptop_Slider, feedback_laptop_SliderItems, feedback_laptop_prev, feedback_laptop_next, feedback_laptop_SlidesLi, feedback_laptop_Dots);
-// end 21個見面後的感想 輪播 - 1920px 電腦版
+// 21個見面後的感想 輪播 - 1460px 電腦版
+// let feedback_laptop_Slider = document.getElementById('feedback_laptop_Slider'),
+// feedback_laptop_SliderItems = document.getElementById('feedback_laptop_Slides'),
+// feedback_laptop_prev = document.getElementById('feedback_laptop_prev'),
+// feedback_laptop_next = document.getElementById('feedback_laptop_next'),
+// feedback_laptop_SlidesLi = document.querySelectorAll("#feedback_laptop_Slides .slide .lists > ul > li"),
+// feedback_laptop_Dots = document.querySelector("#feedback_laptop_Slider .dotsList");
+// slider(feedback_laptop_Slider, feedback_laptop_SliderItems, feedback_laptop_prev, feedback_laptop_next, feedback_laptop_SlidesLi, feedback_laptop_Dots);
+// end 21個見面後的感想 輪播 - 1460px 電腦版
 
 // 21對成功案例 輪播 - 767px 手機版
 let success_mobile_Slider = document.getElementById('success_mobile_Slider'),
@@ -153,7 +171,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
       if (!action) {
         posInitial = items.offsetLeft;
       }
-
       if (dir == 1) {
         items.style.left = (posInitial - slideSize) + "px";
         index++;
@@ -367,7 +384,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   function checkIndex() {
     items.classList.remove('shifting');
     items.classList.remove('dragEnd');
-
     if (index == -1) {
       items.style.left = -(slidesLength * slideSize) + "px";
       index = slidesLength - 1;
@@ -379,10 +395,14 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     allowShift = true;
   }
 }
-// end 1920px ＆ 767px 筆電＆手機版輪播 *------------------
+
+// end *------------------
 
 
-// 影片 light box 點開自動播放，關閉暫定 *------------------
+
+
+// 影片 light box 點開自動播放，關閉暫定
+
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -586,10 +606,12 @@ function closeVideo_phoneSystem() {
   }
 }
 
+
 // 監聽手機轉向
 window.addEventListener('orientationchange', doOnOrientationChange);
-// 判斷手機當前方向
+
 let height = window.innerHeight;
+// 判斷手機當前方向
 function doOnOrientationChange() {
   switch (window.orientation) {
     case -90:
@@ -631,12 +653,19 @@ function doOnOrientationChange() {
       break;
   }
 }
-// end 影片 light box 點開自動播放，關閉暫定 *------------------
 
 
-// 由上到下滑到物件範圍就會跑動畫 *------------------
+// end *------------------
+
+
+
+
+
+// 由上到下滑到物件範圍就會跑動畫
+
 let animate_block_1 = document.querySelector("#animate_block_1");
 let offset_1 = animate_block_1.getBoundingClientRect();
+
 let animate_block_2 = document.querySelector("#animate_block_2");
 let offset_2 = animate_block_2.getBoundingClientRect();
 
@@ -676,22 +705,28 @@ document.addEventListener("scroll", function () {
     animateOff_2();
   }
 });
+
 function animateOn_1() {
   animate_block_1.classList.add("on");
 }
+
 function animateOff_1() {
   animate_block_1.classList.remove("on");
 }
+
 function animateOn_2() {
   animate_block_2.classList.add("on");
 }
+
 function animateOff_2() {
   animate_block_2.classList.remove("on");
 }
-// end 由上到下滑到物件範圍就會跑動畫 *------------------
+// end *------------------
 
 
-// countUp jquery *------------------
+
+
+// countUp jquery
 var a = 0;
 $(window).scroll(function () {
   var oTop = $("#animate_block_1").offset().top - window.innerHeight;
@@ -720,10 +755,11 @@ $(window).scroll(function () {
     a = 1;
   }
 });
-// end countUp jquery *------------------
+
+// end *------------------
 
 
-// 看報告範例 - 開啟和關閉 *------------------
+// 看報告範例 - 開啟和關閉
 $(document).ready(function () {
 
   $('.popBlock').hide();
@@ -737,4 +773,4 @@ $(document).ready(function () {
     $('.popBlock').fadeOut();
   });
 })
-// end 看報告範例 - 開啟和關閉 *------------------
+// end *------------------
