@@ -691,57 +691,28 @@ function animateOff_2() {
 // end 由上到下滑到物件範圍就會跑動畫 *------------------
 
 
-// countUp jquery *------------------
-var a = 0;
-$(window).scroll(function () {
-  var oTop = $("#animate_block_1").offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $(".counter").each(function () {
-      var $this = $(this),
-        countTo = $this.attr("data-count");
-      $({
-        countNum: $this.text()
-      })
-        .stop().delay(500)
-        .animate({
-          countNum: countTo
-        }, {
-          duration: 4000,
-          easing: "linear",
-          step: function () {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function () {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
-        });
-    });
-    a = 1;
-  }
-});
-// end countUp jquery *------------------
-
-
 // 看報告範例 - 開啟和關閉 *------------------
 $(document).ready(function () {
 
-  $('.popBlock').hide();
+    $('.popBlock').hide();
 
-  // 開啟
-  $('.exampleOpenBtn').click(function () {
-    $('.popBlock.see-example').fadeIn();
-  });
-  // 關閉
-  $('.popCloseBtn').click(function () {
-    $('.popBlock').fadeOut();
-  });
-})
+    // 開啟
+    $('.exampleOpenBtn').click(function () {
+      $('.popBlock.see-example').fadeIn();
+    });
+    // 關閉
+    $('.popCloseBtn').click(function () {
+      $('.popBlock').fadeOut();
+    });
+  })
 // end 看報告範例 - 開啟和關閉 *------------------
 
+
+// 新增 Noto Sans Tc 字型 *------------------
 var link = document.createElement("link");
 link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap";
 var linkTags = document.querySelectorAll("link");
 var firstCssTag = document.getElementsByTagName("link")[0];
 console.log(firstCssTag);
-firstCssTag.parentNode.appendChild(link, firstCssTag);
+firstCssTag.parentNode.appendChild(link);
+// end 新增 Noto Sans Tc 字型 *------------------

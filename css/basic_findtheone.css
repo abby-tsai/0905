@@ -24028,6 +24028,51 @@ body.open_lightbox {
 .feedback_block .card-sty8 .text-box {
   min-height: 125px;
 }
+.animate-block-1 .box .title .text.counter {
+  width: 100px;
+  overflow: hidden;
+}
+
+.animate-block-1 .box .title .text.counter .first-numbers, .animate-block-1 .box .title .text.counter .second-numbers {
+  width: auto;
+  display: flex;
+}
+
+.animate-block-1 .box .title .text.counter .first-numbers {
+  position: absolute;
+  left: -28px;
+}
+
+.animate-block-1 .box .title .text.counter .second-numbers {
+  position: relative;
+  right: -22px;
+}
+
+.animate-block-1 .box .title .text.counter .first-numbers span, .animate-block-1 .box .title .text.counter .second-numbers span {
+  text-align: center;
+  flex: 0 0 100px;
+}
+
+.animate-block-1.on .box .title .text.counter .first-numbers {
+  animation: countNumber 3s forwards;
+  animation-timing-function: steps(9);
+}
+
+.animate-block-1.on .box .title .text.counter .second-numbers {
+  animation: countNumber .3s forwards;
+  animation-iteration-count: 10;
+  animation-timing-function: steps(9);
+}
+
+@keyframes countNumber {
+  0% {
+    margin-left: 0px;
+  }
+
+  100% {
+    margin-left: -900px;
+  }
+}
 
 @media only screen and (max-width: 1460px) {
 
