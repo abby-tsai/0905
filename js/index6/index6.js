@@ -738,3 +738,10 @@ $(document).ready(function () {
   });
 })
 // end 看報告範例 - 開啟和關閉 *------------------
+
+var link = document.createElement("link");
+link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap";
+var linkTags = document.querySelectorAll("link");
+var firstCssTag = document.getElementsByTagName("link")[0];
+console.log(firstCssTag);
+firstCssTag.parentNode.appendChild(link, firstCssTag);
