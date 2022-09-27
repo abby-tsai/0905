@@ -57,9 +57,10 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     cloneFirst = firstSlide.cloneNode(true), // 複製第一個
     cloneLast = lastSlide.cloneNode(true), // 複製最後一個
     index = 0,
-    threshold = slideSize / 4, // 手指滑動到slide尺寸的1/4寬度，就會到下一個slide
+    threshold = slideSize / 5, // 手指滑動到slide尺寸的1/5寬度，就會到下一個slide
     allowShift = true,
     dotLi = dots.getElementsByTagName("li");
+
 
   // dots
   let num = ""

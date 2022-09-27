@@ -1,0 +1,60 @@
+/** Fix **/
+.form-horizontal .checkbox-inline, .form-horizontal .radio-inline {
+    margin: 0 10px 0 0;
+}
+
+/** Custom Group Style **/
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-info {
+    border-left-color: #1b809e;
+}
+
+.fix-from-group.input-group {
+    padding-left: 15px;
+}
+
+/** Common **/
+.mr-l-15 {
+    margin-left: 15px;
+}
+
+.error-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.dialog-warning-img {
+    width: 48px;
+    height: 48px;
+    margin: -5px 5px 0 0;
+}
+
+.dialog-processing-img {
+    width: 48px;
+    height: 48px;
+    margin-right: 5px;
+}
+
+/** customized for medium-editor **/
+.editor-blk .editor-area {
+    padding: 5px;
+    min-height: 400px;
+    background: #ffffff;
+    border: 1px solid #d2ded6;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    outline: none;
+}
+
+.editor-blk .editor-area:focus {
+    border-color: #3c8dbc;
+    box-shadow: none;
+}
+/** /customized for medium-editor **/
