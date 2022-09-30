@@ -23,7 +23,7 @@ slider(success_mobile_Slider, success_mobile_SliderItems, success_mobile_prev, s
 // end 21對成功案例 輪播 - 767px 手機版
 
 function slider(wrapper, items, prev, next, slidesLi, dots) {
-  let
+  let 
     posX1 = 0,
     posX2 = 0,
     posStart,
