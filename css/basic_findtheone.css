@@ -18413,10 +18413,10 @@ body .headerBasic>li.btn.android a {
 }
 
 .card-sty7 .desc {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   margin: 0;
-  padding: 0 30px;
+  padding: 0 24px;
   color: var(--colorDark);
   text-align: left;
 }
@@ -18772,12 +18772,7 @@ body .headerBasic>li.btn.android a {
   -o-transition: all 0.5s ease-in-out;
 }
 
-.lightboxTarget .content-box iframe {
-  width: 800px;
-  height: 500px;
-}
-
-.lightboxClose {
+/* .lightboxClose {
   border: 0;
   width: 50px;
   height: 50px;
@@ -18791,6 +18786,24 @@ body .headerBasic>li.btn.android a {
   position: absolute;
   display: block;
   cursor: pointer;
+} */
+
+.lightboxClose {
+  border: 0;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  bottom: auto;
+  top: 15px;
+  font-size: 16px;
+  right: 25px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
 }
 
 .Block-left .date-number {
@@ -19242,13 +19255,21 @@ body .headerBasic>li.btn.android a {
 }
 
 .article-box p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* end K */
 
 /* ============= RWD Setting ============= */
 @media only screen and (max-width: 1460px) {
+  .card-sty7 .desc {
+    font-size: 16px;
+  }
+
+  .article-box p {
+    font-size: 16px;
+  }
+
   .card-sty8 .text-box {
     font-size: 16px;
   }
@@ -19612,10 +19633,6 @@ body .headerBasic>li.btn.android a {
   .banner-bottom {
     margin-bottom: 40px;
     padding: 60px 25px;
-  }
-
-  .article-box p {
-    font-size: 16px;
   }
 
   .ready-block {
@@ -20044,11 +20061,6 @@ body .headerBasic>li.btn.android a {
     left: -60px;
   }
 
-  .lightboxTarget .content-box iframe {
-    width: 600px;
-    height: 400px;
-  }
-
   .btn-box .btn~.btn,
   .btn.btn-sty2.exampleOpenBtn {
     margin-top: 8px;
@@ -20419,11 +20431,6 @@ body .headerBasic>li.btn.android a {
     padding: 40px 22px;
   }
 
-  .lightboxTarget .content-box iframe {
-    width: 500px;
-    height: 300px;
-  }
-
   .client-slider .wrapper {
     width: 430px;
   }
@@ -20517,11 +20524,6 @@ body .headerBasic>li.btn.android a {
 
   .card-sty2 .text-box .desc {
     text-align: left;
-  }
-
-  .lightboxTarget .content-box iframe {
-    width: calc(100vw - 50px);
-    height: 220px;
   }
 
   .client-slider .wrapper {
@@ -22654,8 +22656,8 @@ li>a.btn_orange {
 }
 
 .lightboxTarget .content-box iframe {
-  width: calc(100vw);
-  height: calc(100vh - 150px);
+  width: 100vw;
+  height: 100vh;
 }
 
 .button-section {
@@ -24069,7 +24071,7 @@ body.open_lightbox {
   .animate-block-2.circle-box {
     height: 535px;
     transform: scale(0.57);
-}
+  }
 
   .success_block .card-sty8 .text-box {
     min-height: 180px;
@@ -24272,11 +24274,6 @@ body.open_lightbox {
 
   .success_block .card-sty8 .text-box {
     min-height: 200px;
-  }
-
-  .lightboxTarget .content-box iframe {
-    width: 100vw;
-    height: 100vh;
   }
 
   .lightboxClose {
@@ -24641,9 +24638,11 @@ body.open_lightbox {
   .ready-padding, .chatStyle-padding, .button-padding {
     padding: 0 20px;
   }
+
   .article-padding {
     padding: 0 35px;
   }
+
   .videoHeader-padding {
     padding: 0;
   }
