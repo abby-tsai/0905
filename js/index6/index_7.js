@@ -41,7 +41,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     allowShift = true,
     dotLi = dots.getElementsByTagName("li");
 
-    console.log(threshold);
+  console.log(threshold);
 
   // dots
   let num = ""
@@ -146,197 +146,64 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
 
 
       // dots
-      if (window.innerWidth >= 768) {
+      // 算出共有幾組輪播
+      let dotIndex = Math.floor(dotLi.length / 3);
+      let dotIndexArr = [];
+      for (let i = 0; i < dotIndex; i++) {
+        dotIndexArr.push(i)
+      }
 
-        if (index == 0 || index == 7) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 0; j <= 2; j++) {
-              dotLi[j].classList.add("active")
+      // 一個輪播呈現幾個元件
+      let sliderPerItem = 3;
+      // 餘數
+      let sliderPar = dotLi.length % sliderPerItem;
+
+      // 沒有餘數
+      function dotActive(index) {
+        dotLi[index].classList.add("active")
+        dotLi[index + 1].classList.add("active")
+        dotLi[index + 2].classList.add("active")
+      }
+
+      // 有餘數
+      function dotActiveHasPar(index) {
+        dotLi[index].classList.add("active")
+        dotLi[index + sliderPar - 1].classList.add("active")
+      }
+
+      for (let i = 0; i < dotLi.length; i++) {
+        dotLi[i].classList.remove("active");
+
+        // console.log(dotIndexArr.length, index);
+
+        if (window.innerWidth >= 768) {
+          for (let j = 0; j < dotIndexArr.length; j++) {
+            if (index == 0 || index == dotIndexArr.length + 1 && sliderPar !== 0) {
+              // 當輪播在第一個，或在最後一個且輪播元件無法整除
+              dotActive(0);
+            } else if (index == dotIndexArr.length && sliderPar == 0) {
+              // 當輪播在最後一個，且輪播元件可以整除
+              dotActive(0);
+            } else if (index == j) {
+              dotActive(index * 3);
+            } else if (index == dotIndexArr.length && sliderPar !== 0) {
+              dotActiveHasPar(index * 3);
+            } else if (index == -1 && sliderPar == 0) {
+              dotActive((dotIndexArr.length - 1) * 3)
+            } else if (index == -1 && sliderPar !== 0) {
+              dotActiveHasPar((dotIndexArr.length) * 3)
             }
-            dotLi[i].classList.remove("active")
           }
-        }
-
-        if (index == 1) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 3; j <= 5; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
-          }
-        }
-
-        if (index == 2) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 6; j <= 8; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
-          }
-        }
-
-        if (index == 3) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 9; j <= 11; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
-          }
-        }
-
-        if (index == 4) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 12; j <= 14; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
-          }
-        }
-
-        if (index == 5) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 15; j <= 17; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
-          }
-        }
-
-        if (index == 6 || index == -1) {
-          for (let i = 0; i < dotLi.length; i++) {
-            for (let j = 18; j <= dotLi.length - 1; j++) {
-              dotLi[j].classList.add("active")
-            }
-            dotLi[i].classList.remove("active")
+        } else {
+          // console.log(dotLi.length);
+          if (index == i) {
+            dotLi[i].classList.add("active")
+          } else if (index == -1) {
+            // 最後一個
             dotLi[dotLi.length - 1].classList.add("active")
-          }
-        }
-
-      } else {
-        if (index == 0 || index == dotLi.length) {
-          for (let i = 0; i < dotLi.length; i++) {
+          } else if (index == dotLi.length) {
+            // 第一個
             dotLi[0].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 1) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[1].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 2) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[2].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 3) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[3].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 4) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[4].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 5) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[5].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 6) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[6].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 7) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[7].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 8) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[8].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 9) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[9].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 10) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[10].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 11) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[11].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 12) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[12].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 13) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[13].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 14) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[14].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 15) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[15].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 16) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[16].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 17) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[17].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 18) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[18].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == 19) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[19].classList.add("active")
-            dotLi[i].classList.remove("active")
-          }
-        }
-        if (index == dotLi.length - 1 || index == -1) {
-          for (let i = 0; i < dotLi.length; i++) {
-            dotLi[i].classList.remove("active")
-            dotLi[dotLi.length - 1].classList.add("active")
           }
         }
       }
