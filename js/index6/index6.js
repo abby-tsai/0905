@@ -590,12 +590,14 @@ function closeVideo_phoneSystem() {
 // 監聽手機轉向
 window.addEventListener('orientationchange', doOnOrientationChange);
 // 判斷手機當前方向
-let height = window.screen.height;
-document.querySelector("#height").innerHTML = height + "px";
 function doOnOrientationChange() {
   switch (window.orientation) {
     case -90:
     case 90:
+      
+      let height = window.screen.height;
+      document.querySelector("#height").innerHTML = height + "px";
+
       // 手機轉橫向
       video_1_lightboxTarget.classList.add('is-landscape');
       video_2_lightboxTarget.classList.add('is-landscape');
