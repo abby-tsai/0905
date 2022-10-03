@@ -260,6 +260,7 @@ function doOnOrientationChange() {
         document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
         // document.querySelector("#video_iframe_3").style.width = width + "px";
         window.addEventListener('resize', () => {
+          width = window.innerWidth;
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
