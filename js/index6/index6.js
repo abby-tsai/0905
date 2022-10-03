@@ -237,7 +237,7 @@ function doOnOrientationChange() {
           document.querySelector("#video_iframe_2").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
-          document.querySelector("#width").innerHTML = width - 100;
+          document.querySelector("#width").innerHTML = width;
         });
         window.addEventListener('scroll', function () {
           let nowHeight = window.innerHeight;
@@ -264,6 +264,7 @@ function doOnOrientationChange() {
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.width = width + "px";
+          document.querySelector("#width").innerHTML = width;
         });
         window.addEventListener('scroll', function () {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
