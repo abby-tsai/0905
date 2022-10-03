@@ -229,14 +229,15 @@ function doOnOrientationChange() {
         document.querySelector("#video_iframe_1").style.height = height + "px";
         document.querySelector("#video_iframe_2").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
-        // document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+        width = $(window).width();
+        document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+
         window.addEventListener('resize', () => {
           height = window.innerHeight;
           document.querySelector("#video_iframe_1").style.height = height + "px";
           document.querySelector("#video_iframe_2").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.height = height + "px";
           width = $(window).width();
-          document.querySelector("#width").innerHTML = width;
           document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
         });
         window.addEventListener('scroll', function () {
@@ -258,13 +259,14 @@ function doOnOrientationChange() {
         document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
         document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
         document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-        // document.querySelector("#video_iframe_3").style.width = width + "px";
+        width = $(window).width();
+        document.querySelector("#video_iframe_3").style.width = width + "px";
+
         window.addEventListener('resize', () => {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
           width = $(window).width();
-          document.querySelector("#width").innerHTML = width;
           document.querySelector("#video_iframe_3").style.width = width + "px";
         });
         window.addEventListener('scroll', function () {
