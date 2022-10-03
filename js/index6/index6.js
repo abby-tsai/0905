@@ -223,6 +223,7 @@ function doOnOrientationChange() {
       video_3_lightboxTarget.classList.add('is-landscape');
 
       if (iOS == true) {
+        height = window.innerHeight;
         document.querySelector("#video_iframe_1").style.height = height + "px";
         document.querySelector("#video_iframe_2").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
