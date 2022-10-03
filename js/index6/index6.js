@@ -225,18 +225,18 @@ function doOnOrientationChange() {
 
       if (iOS == true) {
         height = window.innerHeight;
-        width = window.innerWidth;
+        // width = window.innerWidth;
         document.querySelector("#video_iframe_1").style.height = height + "px";
         document.querySelector("#video_iframe_2").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
         // document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
         window.addEventListener('resize', () => {
           height = window.innerHeight;
-          width = window.innerWidth;
           document.querySelector("#video_iframe_1").style.height = height + "px";
           document.querySelector("#video_iframe_2").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.height = height + "px";
-          document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+          // document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+          width = window.innerWidth;
           document.querySelector("#width").innerHTML = width;
         });
         window.addEventListener('scroll', function () {
@@ -246,9 +246,9 @@ function doOnOrientationChange() {
           document.querySelector("#video_iframe_3").style.height = nowHeight + "px";
         });
       }
-
       break;
-    default:
+
+    case 0:
       // 手機是直向
       video_1_lightboxTarget.classList.remove('is-landscape');
       video_2_lightboxTarget.classList.remove('is-landscape');
@@ -260,11 +260,11 @@ function doOnOrientationChange() {
         document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
         // document.querySelector("#video_iframe_3").style.width = width + "px";
         window.addEventListener('resize', () => {
-          width = window.innerWidth;
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-          document.querySelector("#video_iframe_3").style.width = width + "px";
+          // document.querySelector("#video_iframe_3").style.width = width + "px";
+          width = window.innerWidth;
           document.querySelector("#width").innerHTML = width;
         });
         window.addEventListener('scroll', function () {
