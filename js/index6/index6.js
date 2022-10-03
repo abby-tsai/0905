@@ -587,12 +587,18 @@ function closeVideo_phoneSystem() {
   }
 }
 
-// 監聽手機轉向
-window.addEventListener('orientationchange', doOnOrientationChange);
+
+
+
+window.addEventListener('scroll', function () {
+  let height = window.innerHeight;
+  // 監聽手機轉向
+  window.addEventListener('orientationchange', doOnOrientationChange(height));
+});
+
 // 判斷手機當前方向
-let height = window.innerHeight;
-document.querySelector("#height").innerHTML = height + "px";
-function doOnOrientationChange() {
+function doOnOrientationChange(height) {
+  console.log(height);
   switch (window.orientation) {
     case -90:
     case 90:
@@ -696,17 +702,17 @@ function animateOff_2() {
 // 看報告範例 - 開啟和關閉 *------------------
 $(document).ready(function () {
 
-    $('.popBlock').hide();
+  $('.popBlock').hide();
 
-    // 開啟
-    $('.exampleOpenBtn').click(function () {
-      $('.popBlock.see-example').fadeIn();
-    });
-    // 關閉
-    $('.popCloseBtn').click(function () {
-      $('.popBlock').fadeOut();
-    });
-  })
+  // 開啟
+  $('.exampleOpenBtn').click(function () {
+    $('.popBlock.see-example').fadeIn();
+  });
+  // 關閉
+  $('.popCloseBtn').click(function () {
+    $('.popBlock').fadeOut();
+  });
+})
 // end 看報告範例 - 開啟和關閉 *------------------
 
 
