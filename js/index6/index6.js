@@ -1,5 +1,271 @@
 "use strict";
 
+// 影片 light box 點開自動播放，關閉暫定 *------------------
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let video_1 = document.querySelector("#video-1")
+let video_1_btnLightbox = video_1.querySelector(".btnLightbox")
+let video_1_lightboxTarget = video_1.querySelector(".lightboxTarget")
+let video_1_lightboxClose = video_1.querySelector(".lightboxClose")
+let video_1_lightboxBlock = video_1.querySelector(".videoLightboxBlock")
+
+let video_2 = document.querySelector("#video-2")
+let video_2_btnLightbox = video_2.querySelector(".btnLightbox")
+let video_2_lightboxTarget = video_2.querySelector(".lightboxTarget")
+let video_2_lightboxClose = video_2.querySelector(".lightboxClose")
+let video_2_lightboxBlock = video_2.querySelector(".videoLightboxBlock")
+
+let video_3 = document.querySelector("#video-3")
+let video_3_btnLightbox = video_3.querySelector(".btnLightbox")
+let video_3_lightboxTarget = video_3.querySelector(".lightboxTarget")
+let video_3_lightboxClose = video_3.querySelector(".lightboxClose")
+let video_3_lightboxBlock = video_3.querySelector(".videoLightboxBlock")
+
+// 判斷當前裝置
+let ua = navigator.userAgent;
+let android = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; // android
+let iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
+
+function onYouTubeIframeAPIReady() {
+
+  var player_1;
+  var player_2;
+  var player_3;
+
+  player_1 = new YT.Player('video_iframe_1', {
+    videoId: 'GQe7YHqGe8c',
+    width: '400',
+    height: '400',
+    playerVars: {
+      autoplay: 0, // 自動播放影片
+      controls: 1, // 顯示播放器
+      showinfo: 0, // 隱藏影片標題
+      modestbranding: 1, // 隱藏YouTube Logo
+      loop: 0, // 重覆播放
+      fs: 0, // 隱藏全螢幕按鈕
+      cc_load_policty: 0, // 隱藏字幕
+      iv_load_policy: 3, // 隱藏影片註解
+      autohide: 0, // 影片播放時，隱藏影片控制列
+    },
+    events: {
+      onReady: function (e) {
+        // e.target.mute();      //播放時靜音
+        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+      }
+    }
+  });
+  player_2 = new YT.Player('video_iframe_2', {
+    videoId: '18CY5D4Kif8',
+    width: '400',
+    height: '400',
+    playerVars: {
+      autoplay: 0, // 自動播放影片
+      controls: 1, // 顯示播放器
+      showinfo: 0, // 隱藏影片標題
+      modestbranding: 1, // 隱藏YouTube Logo
+      loop: 0, // 重覆播放
+      fs: 0, // 隱藏全螢幕按鈕
+      cc_load_policty: 0, // 隱藏字幕
+      iv_load_policy: 3, // 隱藏影片註解
+      autohide: 0, // 影片播放時，隱藏影片控制列
+    },
+    events: {
+      onReady: function (e) {
+        // e.target.mute();      //播放時靜音
+        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+      }
+    }
+  });
+  player_3 = new YT.Player('video_iframe_3', {
+    videoId: '18CY5D4Kif8',
+    width: '400',
+    height: '400',
+    playerVars: {
+      autoplay: 0, // 自動播放影片
+      controls: 1, // 顯示播放器
+      showinfo: 0, // 隱藏影片標題
+      modestbranding: 1, // 隱藏YouTube Logo
+      loop: 0, // 重覆播放
+      fs: 0, // 隱藏全螢幕按鈕
+      cc_load_policty: 0, // 隱藏字幕
+      iv_load_policy: 3, // 隱藏影片註解
+      autohide: 0, // 影片播放時，隱藏影片控制列
+    },
+    events: {
+      onReady: function (e) {
+        // e.target.mute();      //播放時靜音
+        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+      }
+    }
+  });
+
+  video_1_btnLightbox.addEventListener("click", function () {
+    player_1.playVideo();
+    video_1_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_1_lightboxTarget.classList.remove('show');
+    }
+    video_1_btnLightbox.classList.add('active');
+    document.querySelector("body").classList.add('open_lightbox');
+    openVideo_phoneSystem(video_1_lightboxBlock, video_1_lightboxTarget);
+  });
+  video_1_lightboxClose.addEventListener("click", function () {
+    player_1.pauseVideo();
+    video_1_lightboxTarget.classList.remove('show');
+    video_1_btnLightbox.classList.remove('active');
+    document.querySelector("body").classList.remove('open_lightbox');
+    closeVideo_phoneSystem();
+  });
+
+  video_2_btnLightbox.addEventListener("click", function () {
+    player_2.playVideo();
+    video_2_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_2_lightboxTarget.classList.remove('show');
+    }
+    video_2_btnLightbox.classList.add('active');
+    document.querySelector("body").classList.add('open_lightbox');
+    openVideo_phoneSystem(video_2_lightboxBlock, video_2_lightboxTarget);
+  });
+  video_2_lightboxClose.addEventListener("click", function () {
+    player_2.pauseVideo();
+    video_2_lightboxTarget.classList.remove('show');
+    video_2_btnLightbox.classList.remove('active');
+    document.querySelector("body").classList.remove('open_lightbox');
+    closeVideo_phoneSystem();
+  });
+
+  video_3_btnLightbox.addEventListener("click", function () {
+    player_3.playVideo();
+    video_3_lightboxTarget.classList.add('show');
+    if (android == true) {
+      video_3_lightboxTarget.classList.remove('show');
+    }
+    video_3_btnLightbox.classList.add('active');
+    document.querySelector("body").classList.add('open_lightbox');
+    openVideo_phoneSystem(video_3_lightboxBlock, video_3_lightboxTarget);
+  });
+  video_3_lightboxClose.addEventListener("click", function () {
+    player_3.pauseVideo();
+    video_3_lightboxTarget.classList.remove('show');
+    video_3_btnLightbox.classList.remove('active');
+    document.querySelector("body").classList.remove('open_lightbox');
+    closeVideo_phoneSystem();
+  });
+}
+
+// 開啟全螢幕
+var requestFullscreen = function (ele) {
+  if (ele.requestFullscreen) {
+    ele.requestFullscreen({ navigationUI: 'hide' });
+  } else if (ele.webkitRequestFullscreen) {
+    ele.webkitRequestFullscreen({ navigationUI: 'hide' });
+  } else if (ele.mozRequestFullScreen) {
+    ele.mozRequestFullScreen({ navigationUI: 'hide' });
+  } else if (ele.msRequestFullscreen) {
+    ele.msRequestFullscreen({ navigationUI: 'hide' });
+  }
+};
+
+// 關閉全螢幕
+var exitFullscreen = function () {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+};
+
+// 點擊播放影片按鈕，判斷裝置
+function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
+  if (android == true && window.innerWidth < 768) {
+    // 裝置是 Android
+    lightboxTarget.classList.remove('is-ios');
+    requestFullscreen(lightboxBlock);
+  } else if (iOS == true) {
+    // 裝置是 iOS
+    lightboxTarget.classList.add('is-ios');
+    doOnOrientationChange(lightboxTarget);
+  }
+}
+
+// 點擊關閉/暫停影片按鈕，判斷裝置
+function closeVideo_phoneSystem() {
+  if (android == true && window.innerWidth < 768) {
+    // 裝置是 Android
+    exitFullscreen();
+  }
+}
+
+
+
+
+
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+let height = window.innerHeight;
+
+// 判斷手機當前方向
+function doOnOrientationChange() {
+  switch (window.orientation) {
+    case -90:
+    case 90:
+      // 手機是橫向
+      video_1_lightboxTarget.classList.add('is-landscape');
+      video_2_lightboxTarget.classList.add('is-landscape');
+      video_3_lightboxTarget.classList.add('is-landscape');
+
+      if (iOS == true) {
+        document.querySelector("#video_iframe_1").style.height = height + "px";
+        document.querySelector("#video_iframe_2").style.height = height + "px";
+        document.querySelector("#video_iframe_3").style.height = height + "px";
+        window.addEventListener('resize', () => {
+          height = window.innerHeight;
+          document.querySelector("#video_iframe_1").style.height = height + "px";
+          document.querySelector("#video_iframe_2").style.height = height + "px";
+          document.querySelector("#video_iframe_3").style.height = height + "px";
+        });
+        window.addEventListener('scroll', function () {
+          let nowHeight = window.innerHeight;
+          document.querySelector("#video_iframe_3").style.height = nowHeight + "px";
+        });
+      }
+
+      break;
+    default:
+      // 手機是直向
+      video_1_lightboxTarget.classList.remove('is-landscape');
+      video_2_lightboxTarget.classList.remove('is-landscape');
+      video_3_lightboxTarget.classList.remove('is-landscape');
+
+      if (iOS == true) {
+        document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+        window.addEventListener('resize', () => {
+          document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+        });
+        window.addEventListener('scroll', function () {
+          // let nowHeight = window.innerHeight;
+          document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+        });
+      }
+
+      break;
+  }
+}
+// end 影片 light box 點開自動播放，關閉暫定 *------------------
+
+
 // 1920px ＆ 767px 電腦版輪播 *------------------
 
 // 21對成功案例 輪播 - 1920px 電腦版
@@ -383,270 +649,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
 // end 1920px ＆ 767px 筆電＆手機版輪播 *------------------
 
 
-// 影片 light box 點開自動播放，關閉暫定 *------------------
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let video_1 = document.querySelector("#video-1")
-let video_1_btnLightbox = video_1.querySelector(".btnLightbox")
-let video_1_lightboxTarget = video_1.querySelector(".lightboxTarget")
-let video_1_lightboxClose = video_1.querySelector(".lightboxClose")
-let video_1_lightboxBlock = video_1.querySelector(".videoLightboxBlock")
-
-let video_2 = document.querySelector("#video-2")
-let video_2_btnLightbox = video_2.querySelector(".btnLightbox")
-let video_2_lightboxTarget = video_2.querySelector(".lightboxTarget")
-let video_2_lightboxClose = video_2.querySelector(".lightboxClose")
-let video_2_lightboxBlock = video_2.querySelector(".videoLightboxBlock")
-
-let video_3 = document.querySelector("#video-3")
-let video_3_btnLightbox = video_3.querySelector(".btnLightbox")
-let video_3_lightboxTarget = video_3.querySelector(".lightboxTarget")
-let video_3_lightboxClose = video_3.querySelector(".lightboxClose")
-let video_3_lightboxBlock = video_3.querySelector(".videoLightboxBlock")
-
-// 判斷當前裝置
-let ua = navigator.userAgent;
-let android = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; // android
-let iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
-
-function onYouTubeIframeAPIReady() {
-
-  var player_1;
-  var player_2;
-  var player_3;
-
-  player_1 = new YT.Player('video_iframe_1', {
-    videoId: 'GQe7YHqGe8c',
-    width: '400',
-    height: '400',
-    playerVars: {
-      autoplay: 0, // 自動播放影片
-      controls: 1, // 顯示播放器
-      showinfo: 0, // 隱藏影片標題
-      modestbranding: 1, // 隱藏YouTube Logo
-      loop: 0, // 重覆播放
-      fs: 0, // 隱藏全螢幕按鈕
-      cc_load_policty: 0, // 隱藏字幕
-      iv_load_policy: 3, // 隱藏影片註解
-      autohide: 0, // 影片播放時，隱藏影片控制列
-    },
-    events: {
-      onReady: function (e) {
-        // e.target.mute();      //播放時靜音
-        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
-      }
-    }
-  });
-  player_2 = new YT.Player('video_iframe_2', {
-    videoId: '18CY5D4Kif8',
-    width: '400',
-    height: '400',
-    playerVars: {
-      autoplay: 0, // 自動播放影片
-      controls: 1, // 顯示播放器
-      showinfo: 0, // 隱藏影片標題
-      modestbranding: 1, // 隱藏YouTube Logo
-      loop: 0, // 重覆播放
-      fs: 0, // 隱藏全螢幕按鈕
-      cc_load_policty: 0, // 隱藏字幕
-      iv_load_policy: 3, // 隱藏影片註解
-      autohide: 0, // 影片播放時，隱藏影片控制列
-    },
-    events: {
-      onReady: function (e) {
-        // e.target.mute();      //播放時靜音
-        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
-      }
-    }
-  });
-  player_3 = new YT.Player('video_iframe_3', {
-    videoId: '18CY5D4Kif8',
-    width: '400',
-    height: '400',
-    playerVars: {
-      autoplay: 0, // 自動播放影片
-      controls: 1, // 顯示播放器
-      showinfo: 0, // 隱藏影片標題
-      modestbranding: 1, // 隱藏YouTube Logo
-      loop: 0, // 重覆播放
-      fs: 0, // 隱藏全螢幕按鈕
-      cc_load_policty: 0, // 隱藏字幕
-      iv_load_policy: 3, // 隱藏影片註解
-      autohide: 0, // 影片播放時，隱藏影片控制列
-    },
-    events: {
-      onReady: function (e) {
-        // e.target.mute();      //播放時靜音
-        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
-      }
-    }
-  });
-
-  video_1_btnLightbox.addEventListener("click", function () {
-    player_1.playVideo();
-    video_1_lightboxTarget.classList.add('show');
-    if (android == true) {
-      video_1_lightboxTarget.classList.remove('show');
-    }
-    video_1_btnLightbox.classList.add('active');
-    document.querySelector("body").classList.add('open_lightbox');
-    openVideo_phoneSystem(video_1_lightboxBlock, video_1_lightboxTarget);
-  });
-  video_1_lightboxClose.addEventListener("click", function () {
-    player_1.pauseVideo();
-    video_1_lightboxTarget.classList.remove('show');
-    video_1_btnLightbox.classList.remove('active');
-    document.querySelector("body").classList.remove('open_lightbox');
-    closeVideo_phoneSystem();
-  });
-
-  video_2_btnLightbox.addEventListener("click", function () {
-    player_2.playVideo();
-    video_2_lightboxTarget.classList.add('show');
-    if (android == true) {
-      video_2_lightboxTarget.classList.remove('show');
-    }
-    video_2_btnLightbox.classList.add('active');
-    document.querySelector("body").classList.add('open_lightbox');
-    openVideo_phoneSystem(video_2_lightboxBlock, video_2_lightboxTarget);
-  });
-  video_2_lightboxClose.addEventListener("click", function () {
-    player_2.pauseVideo();
-    video_2_lightboxTarget.classList.remove('show');
-    video_2_btnLightbox.classList.remove('active');
-    document.querySelector("body").classList.remove('open_lightbox');
-    closeVideo_phoneSystem();
-  });
-
-  video_3_btnLightbox.addEventListener("click", function () {
-    player_3.playVideo();
-    video_3_lightboxTarget.classList.add('show');
-    if (android == true) {
-      video_3_lightboxTarget.classList.remove('show');
-    }
-    video_3_btnLightbox.classList.add('active');
-    document.querySelector("body").classList.add('open_lightbox');
-    openVideo_phoneSystem(video_3_lightboxBlock, video_3_lightboxTarget);
-  });
-  video_3_lightboxClose.addEventListener("click", function () {
-    player_3.pauseVideo();
-    video_3_lightboxTarget.classList.remove('show');
-    video_3_btnLightbox.classList.remove('active');
-    document.querySelector("body").classList.remove('open_lightbox');
-    closeVideo_phoneSystem();
-  });
-}
-
-// 開啟全螢幕
-var requestFullscreen = function (ele) {
-  if (ele.requestFullscreen) {
-    ele.requestFullscreen({ navigationUI: 'hide' });
-  } else if (ele.webkitRequestFullscreen) {
-    ele.webkitRequestFullscreen({ navigationUI: 'hide' });
-  } else if (ele.mozRequestFullScreen) {
-    ele.mozRequestFullScreen({ navigationUI: 'hide' });
-  } else if (ele.msRequestFullscreen) {
-    ele.msRequestFullscreen({ navigationUI: 'hide' });
-  }
-};
-
-// 關閉全螢幕
-var exitFullscreen = function () {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
-  }
-};
-
-// 點擊播放影片按鈕，判斷裝置
-function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
-  if (android == true && window.innerWidth < 768) {
-    // 裝置是 Android
-    lightboxTarget.classList.remove('is-ios');
-    requestFullscreen(lightboxBlock);
-  } else if (iOS == true) {
-    // 裝置是 iOS
-    lightboxTarget.classList.add('is-ios');
-    doOnOrientationChange(lightboxTarget);
-  }
-}
-
-// 點擊關閉/暫停影片按鈕，判斷裝置
-function closeVideo_phoneSystem() {
-  if (android == true && window.innerWidth < 768) {
-    // 裝置是 Android
-    exitFullscreen();
-  }
-}
-
-
-
-
-
-
-window.addEventListener('orientationchange', doOnOrientationChange);
-let height = window.innerHeight;
-
-// 判斷手機當前方向
-function doOnOrientationChange() {
-  switch (window.orientation) {
-    case -90:
-    case 90:
-      // 手機是橫向
-      video_1_lightboxTarget.classList.add('is-landscape');
-      video_2_lightboxTarget.classList.add('is-landscape');
-      video_3_lightboxTarget.classList.add('is-landscape');
-
-      if (iOS == true) {
-        document.querySelector("#video_iframe_1").style.height = height + "px";
-        document.querySelector("#video_iframe_2").style.height = height + "px";
-        document.querySelector("#video_iframe_3").style.height = height + "px";
-        window.addEventListener('resize', () => {
-          height = window.innerHeight;
-          document.querySelector("#video_iframe_1").style.height = height + "px";
-          document.querySelector("#video_iframe_2").style.height = height + "px";
-          document.querySelector("#video_iframe_3").style.height = height + "px";
-        });
-        window.addEventListener('scroll', function () {
-          let nowHeight = window.innerHeight;
-          document.querySelector("#video_iframe_3").style.height = nowHeight + "px";
-        });
-      }
-
-      break;
-    default:
-      // 手機是直向
-      video_1_lightboxTarget.classList.remove('is-landscape');
-      video_2_lightboxTarget.classList.remove('is-landscape');
-      video_3_lightboxTarget.classList.remove('is-landscape');
-
-      if (iOS == true) {
-        document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
-        document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
-        document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-        window.addEventListener('resize', () => {
-          document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
-          document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
-          document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-        });
-        window.addEventListener('scroll', function () {
-          // let nowHeight = window.innerHeight;
-          document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
-        });
-      }
-
-      break;
-  }
-}
-// end 影片 light box 點開自動播放，關閉暫定 *------------------
 
 
 // 由上到下滑到物件範圍就會跑動畫 *------------------
