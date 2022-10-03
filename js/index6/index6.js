@@ -591,14 +591,14 @@ function closeVideo_phoneSystem() {
 
 
 window.addEventListener('scroll', function () {
-  let height = window.innerHeight;
+  let nowHeight = window.innerHeight;
   // 監聽手機轉向
-  window.addEventListener('orientationchange', doOnOrientationChange(height));
+  window.addEventListener('orientationchange', doOnOrientationChange(nowHeight));
 });
 
 // 判斷手機當前方向
 function doOnOrientationChange(height) {
-  console.log(height);
+
   switch (window.orientation) {
     case -90:
     case 90:
@@ -612,7 +612,7 @@ function doOnOrientationChange(height) {
         document.querySelector("#video_iframe_2").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
         window.addEventListener('resize', () => {
-          height = window.innerHeight;
+          // height = window.innerHeight;
           document.querySelector("#video_iframe_1").style.height = height + "px";
           document.querySelector("#video_iframe_2").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.height = height + "px";
