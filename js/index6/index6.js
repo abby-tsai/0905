@@ -590,7 +590,8 @@ function closeVideo_phoneSystem() {
 // 監聽手機轉向
 window.addEventListener('orientationchange', doOnOrientationChange);
 // 判斷手機當前方向
-let height = window.innerHeight;
+let height = window.screen.height;
+document.querySelector("#height").innerHTML = height + "px";
 function doOnOrientationChange() {
   switch (window.orientation) {
     case -90:
