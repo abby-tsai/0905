@@ -618,6 +618,8 @@ function doOnOrientationChange(height) {
           document.querySelector("#video_iframe_3").style.height = height + "px";
         });
       }
+      document.querySelector("#height").innerHTML = document.querySelector("#video_iframe_3").style.height;
+
       break;
     default:
       // 手機轉直向
