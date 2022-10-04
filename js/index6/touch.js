@@ -280,6 +280,8 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
 
       startx = e.touches[0].pageX;
       starty = e.touches[0].pageY;
+
+      // document.querySelector("body").style.overflow = "hidden";
     } else {
       posX1 = e.clientX;
       document.onmouseup = dragEnd;
@@ -291,6 +293,8 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     e = e || window.event;
     if (e.type == 'touchmove') {
       posX2 = e.touches[0].clientX;
+
+      // document.querySelector("body").style.overflow = "hidden";
     } else {
       posX2 = e.clientX;
     }
@@ -315,14 +319,20 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
       shiftSlide(1, 'drag');
       console.log("下一張");
 
+      document.querySelector("body").style.overflowY = "hidden";
+
     } else if (posFinal - posStart > threshold && direction == 4) {
       // 上一張
       shiftSlide(-1, 'drag');
       console.log("上一張")
 
+      document.querySelector("body").style.overflowY = "hidden";
+
     } else if(direction == 1 || direction == 2) {
       items.style.left = (posInitial) + "px";
       console.log("不要左右滑動")
+
+      document.querySelector("body").style.overflowY = "auto";
     }
     document.onmouseup = null;
     document.onmousemove = null;
@@ -331,7 +341,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   }
 
   function shiftSlide(dir, action) {
-    items.classList.add('shifting', 'touchNone');
+    items.classList.add('shifting');
     if (allowShift) {
       if (!action) {
         posInitial = items.offsetLeft;
@@ -418,8 +428,10 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   items.addEventListener('transitionend', checkIndex);
 
   function checkIndex() {
-    items.classList.remove('shifting', 'touchNone');
+    items.classList.remove('shifting');
     items.classList.remove('dragEnd');
+
+    document.querySelector("body").style.overflowY = "auto";
 
     if (index == -1) {
       items.style.left = -(slidesLength * slideSize) + "px";
