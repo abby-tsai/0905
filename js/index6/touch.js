@@ -285,8 +285,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
       document.onmouseup = dragEnd;
       document.onmousemove = dragAction;
     }
-
-
   }
 
   function dragAction(e) {
@@ -301,7 +299,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   function dragEnd(e) {
     items.classList.add('dragEnd');
 
-
     var endx, endy;
     endx = e.changedTouches[0].pageX;
     endy = e.changedTouches[0].pageY;
@@ -311,17 +308,18 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     posStart = posX1
     // 手指最後離開的位置
     posFinal = e.changedTouches[0].clientX;
+
     // 如果 離開的位置 - 開始的位置 < -偏移
     if (posFinal - posStart < -threshold && direction == 3) {
       // 下一張
       shiftSlide(1, 'drag');
-      e.preventDefault();
       console.log("下一張");
+
     } else if (posFinal - posStart > threshold && direction == 4) {
       // 上一張
       shiftSlide(-1, 'drag');
-      e.preventDefault();
       console.log("上一張")
+
     } else if(direction == 1 || direction == 2) {
       items.style.left = (posInitial) + "px";
       console.log("不要左右滑動")
@@ -330,29 +328,10 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     document.onmousemove = null;
 
 
-    // switch (direction) {
-    //   case 0:
-    //     console.log("未滑動！");
-    //     break;
-    //   case 1:
-    //     console.log("向下滑")
-    //     break;
-    //   case 2:
-    //     console.log("向上滑")
-    //     break;
-    //   case 3:
-    //     console.log("下一張")
-    //     break;
-    //   case 4:
-    //     console.log("上一張")
-    //     break;
-    //   default:
-    // }
-
   }
 
   function shiftSlide(dir, action) {
-    items.classList.add('shifting');
+    items.classList.add('shifting', 'touchNone');
     if (allowShift) {
       if (!action) {
         posInitial = items.offsetLeft;
@@ -439,7 +418,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   items.addEventListener('transitionend', checkIndex);
 
   function checkIndex() {
-    items.classList.remove('shifting');
+    items.classList.remove('shifting', 'touchNone');
     items.classList.remove('dragEnd');
 
     if (index == -1) {
