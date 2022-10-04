@@ -238,34 +238,34 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     // }
 
     // 這個是上下滑的範圍較小
-    // if (angle >= -110 && angle <= -70) {
-    //   // 向下滑
-    //   result = 1;
-    // } else if (angle > 70 && angle < 110) {
-    //   // 向上滑
-    //   result = 2;
-    // } else if ((angle >= 110 && angle <= 180) || (angle >= -180 && angle < -110)) {
-    //   // 下一張
-    //   result = 3;
-    // } else if (angle >= -70 && angle <= 70) {
-    //   // 上一張
-    //   result = 4;
-    // }
-
-    // 這個是上下滑的範圍較大
-    if (angle >= -160 && angle <= -20) {
+    if (angle >= -110 && angle <= -70) {
       // 向下滑
       result = 1;
-    } else if (angle > 20 && angle < 160) {
+    } else if (angle > 70 && angle < 110) {
       // 向上滑
       result = 2;
-    } else if ((angle >= 160 && angle <= 180) || (angle >= -180 && angle < -160)) {
+    } else if ((angle >= 110 && angle <= 180) || (angle >= -180 && angle < -110)) {
       // 下一張
       result = 3;
-    } else if (angle >= -20 && angle <= 20) {
+    } else if (angle >= -70 && angle <= 70) {
       // 上一張
       result = 4;
     }
+
+    // 這個是上下滑的範圍較大
+    // if (angle >= -160 && angle <= -20) {
+    //   // 向下滑
+    //   result = 1;
+    // } else if (angle > 20 && angle < 160) {
+    //   // 向上滑
+    //   result = 2;
+    // } else if ((angle >= 160 && angle <= 180) || (angle >= -180 && angle < -160)) {
+    //   // 下一張
+    //   result = 3;
+    // } else if (angle >= -20 && angle <= 20) {
+    //   // 上一張
+    //   result = 4;
+    // }
 
     return result;
   }
@@ -312,12 +312,12 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     // 手指最後離開的位置
     posFinal = e.changedTouches[0].clientX;
     // 如果 離開的位置 - 開始的位置 < -偏移
-    if (posFinal - posStart < -threshold && direction == 3 && e.cancelable) {
+    if (posFinal - posStart < -threshold && direction == 3) {
       // 下一張
       shiftSlide(1, 'drag');
       e.preventDefault();
       console.log("下一張");
-    } else if (posFinal - posStart > threshold && direction == 4 && e.cancelable) {
+    } else if (posFinal - posStart > threshold && direction == 4) {
       // 上一張
       shiftSlide(-1, 'drag');
       e.preventDefault();
