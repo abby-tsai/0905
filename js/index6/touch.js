@@ -18,19 +18,19 @@
 //   var angle = getAngle(angx, angy);
 
 //   // 這個是均分
-//   // if (angle >= -135 && angle <= -45) {
-//   //   // 向下滑
-//   //   result = 1;
-//   // } else if (angle > 45 && angle < 135) {
-//   //   // 向上滑
-//   //   result = 2;
-//   // } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
-//   //   // 下一張
-//   //   result = 3;
-//   // } else if (angle >= -45 && angle <= 45) {
-//   //   // 上一張
-//   //   result = 4;
-//   // }
+//   if (angle >= -135 && angle <= -45) {
+//     // 向下滑
+//     result = 1;
+//   } else if (angle > 45 && angle < 135) {
+//     // 向上滑
+//     result = 2;
+//   } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+//     // 下一張
+//     result = 3;
+//   } else if (angle >= -45 && angle <= 45) {
+//     // 上一張
+//     result = 4;
+//   }
 
 //   // 這個是上下滑的範圍較小
 //   // if (angle >= -110 && angle <= -70) {
@@ -48,19 +48,19 @@
 //   // }
 
 //   // 這個是上下滑的範圍較大
-//   if (angle >= -160 && angle <= -20) {
-//     // 向下滑
-//     result = 1;
-//   } else if (angle > 20 && angle < 160) {
-//     // 向上滑
-//     result = 2;
-//   } else if ((angle >= 160 && angle <= 180) || (angle >= -180 && angle < -160)) {
-//     // 下一張
-//     result = 3;
-//   } else if (angle >= -20 && angle <= 20) {
-//     // 上一張
-//     result = 4;
-//   }
+//   // if (angle >= -160 && angle <= -20) {
+//   //   // 向下滑
+//   //   result = 1;
+//   // } else if (angle > 20 && angle < 160) {
+//   //   // 向上滑
+//   //   result = 2;
+//   // } else if ((angle >= 160 && angle <= 180) || (angle >= -180 && angle < -160)) {
+//   //   // 下一張
+//   //   result = 3;
+//   // } else if (angle >= -20 && angle <= 20) {
+//   //   // 上一張
+//   //   result = 4;
+//   // }
 
 //   return result;
 // }
@@ -72,7 +72,7 @@
 // }, false);
 
 // //手指離開屏幕
-// document.addEventListener("touchend", function (e) {
+// document.addEventListener("touchmove", function (e) {
 //   var endx, endy;
 //   endx = e.changedTouches[0].pageX;
 //   endy = e.changedTouches[0].pageY;
@@ -161,6 +161,8 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     dotLi = dots.getElementsByTagName("li");
 
   var startx, starty;
+  var endx, endy;
+  var direction;
 
   // dots
   let num = ""
@@ -203,7 +205,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   });
 
 
-  // 測試中----------
+
 
   //獲得角度
   function getAngle(angx, angy) {
@@ -269,7 +271,7 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
 
     return result;
   }
-  // end 測試中----------
+
 
 
 
@@ -295,6 +297,16 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     e = e || window.event;
     if (e.type == 'touchmove') {
       posX2 = e.touches[0].clientX;
+
+      endx = e.changedTouches[0].pageX;
+      endy = e.changedTouches[0].pageY;
+      direction = getDirection(startx, starty, endx, endy);
+      console.log(direction);
+      if(direction == 1 || direction == 2){
+        document.querySelector("body").style.overflowY = "auto"
+      } else {
+        document.querySelector("body").style.overflowY = "hidden"
+      }
     } else {
       posX2 = e.clientX;
     }
@@ -302,11 +314,12 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
 
   function dragEnd(e) {
     items.classList.add('dragEnd');
+    document.querySelector("body").style.overflowY = "auto"
 
-    var endx, endy;
-    endx = e.changedTouches[0].pageX;
-    endy = e.changedTouches[0].pageY;
-    var direction = getDirection(startx, starty, endx, endy);
+    // var endx, endy;
+    // endx = e.changedTouches[0].pageX;
+    // endy = e.changedTouches[0].pageY;
+    // var direction = getDirection(startx, starty, endx, endy);
 
     // 手指開始碰到的位置
     posStart = posX1
