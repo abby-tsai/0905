@@ -223,34 +223,34 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     var angle = getAngle(angx, angy);
 
     // 這個是均分
-    // if (angle >= -135 && angle <= -45) {
-    //   // 向下滑
-    //   result = 1;
-    // } else if (angle > 45 && angle < 135) {
-    //   // 向上滑
-    //   result = 2;
-    // } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
-    //   // 下一張
-    //   result = 3;
-    // } else if (angle >= -45 && angle <= 45) {
-    //   // 上一張
-    //   result = 4;
-    // }
-
-    // 這個是上下滑的範圍較小
-    if (angle >= -110 && angle <= -70) {
+    if (angle >= -135 && angle <= -45) {
       // 向下滑
       result = 1;
-    } else if (angle > 70 && angle < 110) {
+    } else if (angle > 45 && angle < 135) {
       // 向上滑
       result = 2;
-    } else if ((angle >= 110 && angle <= 180) || (angle >= -180 && angle < -110)) {
+    } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
       // 下一張
       result = 3;
-    } else if (angle >= -70 && angle <= 70) {
+    } else if (angle >= -45 && angle <= 45) {
       // 上一張
       result = 4;
     }
+
+    // 這個是上下滑的範圍較小
+    // if (angle >= -110 && angle <= -70) {
+    //   // 向下滑
+    //   result = 1;
+    // } else if (angle > 70 && angle < 110) {
+    //   // 向上滑
+    //   result = 2;
+    // } else if ((angle >= 110 && angle <= 180) || (angle >= -180 && angle < -110)) {
+    //   // 下一張
+    //   result = 3;
+    // } else if (angle >= -70 && angle <= 70) {
+    //   // 上一張
+    //   result = 4;
+    // }
 
     // 這個是上下滑的範圍較大
     // if (angle >= -160 && angle <= -20) {
@@ -271,9 +271,12 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   }
   // end 測試中----------
 
+
+
   function dragStart(e) {
     e = e || window.event;
     // e.preventDefault();
+
     posInitial = items.offsetLeft;
     if (e.type == 'touchstart') {
       posX1 = e.touches[0].clientX;
@@ -281,7 +284,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
       startx = e.touches[0].pageX;
       starty = e.touches[0].pageY;
 
-      // document.querySelector("body").style.overflow = "hidden";
     } else {
       posX1 = e.clientX;
       document.onmouseup = dragEnd;
@@ -293,8 +295,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
     e = e || window.event;
     if (e.type == 'touchmove') {
       posX2 = e.touches[0].clientX;
-
-      // document.querySelector("body").style.overflow = "hidden";
     } else {
       posX2 = e.clientX;
     }
@@ -319,20 +319,14 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
       shiftSlide(1, 'drag');
       console.log("下一張");
 
-      document.querySelector("body").style.overflowY = "hidden";
-
     } else if (posFinal - posStart > threshold && direction == 4) {
       // 上一張
       shiftSlide(-1, 'drag');
       console.log("上一張")
 
-      document.querySelector("body").style.overflowY = "hidden";
-
-    } else if(direction == 1 || direction == 2) {
+    } else if (direction == 1 || direction == 2) {
       items.style.left = (posInitial) + "px";
       console.log("不要左右滑動")
-
-      document.querySelector("body").style.overflowY = "auto";
     }
     document.onmouseup = null;
     document.onmousemove = null;
@@ -430,8 +424,6 @@ function slider(wrapper, items, prev, next, slidesLi, dots) {
   function checkIndex() {
     items.classList.remove('shifting');
     items.classList.remove('dragEnd');
-
-    document.querySelector("body").style.overflowY = "auto";
 
     if (index == -1) {
       items.style.left = -(slidesLength * slideSize) + "px";
