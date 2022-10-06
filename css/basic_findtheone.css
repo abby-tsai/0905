@@ -22905,13 +22905,13 @@ body.open_lightbox {
 }
 
 .slider-sty1 .prev {
-  background-image: url(../images/index6/slider-arrow-prev.svg);
+  background-image: url("../images/index6/slider-arrow-prev.svg");
   left: 17px;
   background-position: 10px center;
 }
 
 .slider-sty1 .next {
-  background-image: url(../images/index6/slider-arrow-next.svg);
+  background-image: url("../images/index6/slider-arrow-next.svg");
   right: 17px;
   background-position: 15px center;
 }
@@ -23035,7 +23035,7 @@ body.open_lightbox {
 .animate-block-1 .box .circle,
 .animate-block-1 .box .title,
 .animate-block-1 .box .card {
-  background-image: url(../images/index6/animate-2.png);
+  background-image: url("../images/index6/animate-2.png");
   background-repeat: no-repeat;
   background-size: 1134px 964px;
 }
@@ -23046,7 +23046,7 @@ body.open_lightbox {
   .animate-block-1 .box .circle,
   .animate-block-1 .box .title,
   .animate-block-1 .box .card {
-    background-image: url(../images/index6/animate-2@x2.png);
+    background-image: url("../images/index6/animate-2@x2.png");
   }
 }
 
@@ -23349,7 +23349,7 @@ body.open_lightbox {
 
 .animate-block-2 .up-text .text, .animate-block-2 .up-text .number,
 .circle-list li .circle {
-  background-image: url(../images/index6/animate-1.png);
+  background-image: url("../images/index6/animate-1.png");
   background-size: 1134px 1106px;
 }
 
@@ -23358,7 +23358,7 @@ body.open_lightbox {
   /* 這裡是放2倍大的圖片（mac、iphone用的圖片）css... */
   .animate-block-2 .up-text .text, .animate-block-2 .up-text .number,
   .circle-list li .circle {
-    background-image: url(../images/index6/animate-1@2x.png);
+    background-image: url("../images/index6/animate-1@2x.png");
   }
 }
 
@@ -24780,7 +24780,7 @@ body.open_lightbox {
   }
 
   .animate-block-2 .up-text .text, .animate-block-2 .up-text .number, .circle-list li .circle {
-    background-image: url(../images/index6/animate-1-mobile.png);
+    background-image: url("../images/index6/animate-1-mobile.png");
     background-size: 533px;
   }
 
@@ -24788,7 +24788,7 @@ body.open_lightbox {
 
     /* 這裡是放2倍大的圖片（mac、iphone用的圖片）css... */
     .animate-block-2 .up-text .text, .animate-block-2 .up-text .number, .circle-list li .circle {
-      background-image: url(../images/index6/animate-1-mobile@2x.png);
+      background-image: url("../images/index6/animate-1-mobile@2x.png");
     }
   }
 
