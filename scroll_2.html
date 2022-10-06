@@ -36,38 +36,39 @@
         width: calc(100vw - 20px);
         overflow: auto;
         margin-right: 0;
+        white-space: nowrap;
       }
 
       .slider-sty1 .slides {
         left: 0;
-        overflow: auto;
+        /* overflow: auto; */
         width: auto;
-        white-space: nowrap;
-        padding-right: 20px;
+        /* white-space: nowrap;
+        padding-right: 20px; */
       }
 
-      .slider-sty1 .slides::-webkit-scrollbar {
+      .slider-sty1 .wrapper::-webkit-scrollbar {
         width: 5px;
         background: #e5e5e5;
         z-index: 10
       }
 
-      .slider-sty1 .slides::-webkit-scrollbar:horizontal {
+      .slider-sty1 .wrapper::-webkit-scrollbar:horizontal {
         height: 5px
       }
 
-      .slider-sty1 .slides::-webkit-scrollbar-track {
+      .slider-sty1 .wrapper::-webkit-scrollbar-track {
         border-radius: 2px
       }
 
-      .slider-sty1 .slides::-webkit-scrollbar-thumb {
+      .slider-sty1 .wrapper::-webkit-scrollbar-thumb {
         border-radius: 2px;
         background: #9f9f9f
       }
 
       .slider-sty1 .slide {
         min-width: calc(100vw - 140px);
-        margin-right: 20px;
+        padding-right: 20px;
       }
 
       .success_block .card-sty8 .text-box,
