@@ -1,0 +1,2750 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <title>find the one 心理學演算法婚友平台</title>
+  <meta name="keywords" content="Copyright © 2016 闌珊處網路股份有限公司 All Rights Reserved" />
+  <!-- 網頁描述 -->
+  <meta name="description" content="find the one 心理學交友平台，整合全球兩性心理學研究，透過心理測驗，找出 1% 最適合你的人，在交往之前，解析兩人的契合程度，告別相愛容易相處難" />
+  <meta name="Author" content="find the one 心理學演算法婚友平台" />
+  <meta name="copyright" content="Copyright © 2016 闌珊處網路股份有限公司 All Rights Reserved">
+  <!-- iCon圖示 -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- FB  -->
+  <meta property="og:title" content="find the one 心理學演算法婚友平台" />
+  <meta property="og:url" content="http://localhost/index5.php" />
+  <meta property="og:image" content="https://www.findtheone.com.tw/images/thumbnail.jpg" />
+  <meta property="og:description"
+    content="find the one 心理學交友平台，整合全球兩性心理學研究，透過心理測驗，找出 1% 最適合你的人，在交往之前，解析兩人的契合程度，告別相愛容易相處難" />
+  <meta property="fb:app_id" content="165499196982733" />
+  <!-- CSS -->
+  <link href="css/at_cage.css" rel="stylesheet" type="text/css" />
+  <link href="css/basic_findtheone.css" rel="stylesheet" type="text/css" />
+
+  <!-- facebook SDK -->
+  <script type="text/javascript" src="http://connect.facebook.net/zh_TW/all.js"></script>
+  <script type="text/javascript" src="js/sdk_facebook.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    @media only screen and (max-width: 767px) {
+      .slider-sty1 .wrapper {
+        width: calc(100vw - 40px);
+        overflow: auto;
+      }
+
+      .slider-sty1 .slides {
+        left: 0;
+        overflow: auto;
+        column-gap: 20px;
+        width: auto;
+        white-space: nowrap;
+      }
+
+      .slider-sty1 .slides::-webkit-scrollbar {
+        width: 5px;
+        background: #e5e5e5;
+        z-index: 10
+      }
+
+      .slider-sty1 .slides::-webkit-scrollbar:horizontal {
+        height: 5px
+      }
+
+      .slider-sty1 .slides::-webkit-scrollbar-track {
+        border-radius: 2px
+      }
+
+      .slider-sty1 .slides::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background: #9f9f9f
+      }
+
+      .slider-sty1 .slide {
+        min-width: calc(100vw - 140px);
+      }
+
+      .success_block .card-sty8 .text-box,
+      .feedback_block .card-sty8 .text-box {
+        white-space: initial;
+      }
+    }
+  </style>
+</head>
+
+<body class="article">
+  <div id="fb-root"></div>
+  <div id="header">
+    <div class="headerConts clear unselectable">
+      <ul class="headerBasic">
+        <li class="logo"><a href="index.php"></a></li>
+        <li class="subSlogan">找到對的另一半</li>
+        <!-- 以下未登入 -->
+        <li class="btn off_read"><a href="articlelist.php">閱讀愛情</a></li>
+        <li class="btn off_psyc"><a href="psycho_testlist.php">心理測驗</a></li>
+        <li class="btn fbLogin_btn"><a onClick="FB.login()"><i class="fa fa-facebook"></i>登入</a></li>
+        <li class="btn fbLogout_btn"><a><i class="fa fa-facebook"></i>登出</a></li>
+        <!-- 以下已登入 -->
+        <li class="btn_on userName">
+          <p>Hi, 金城武</p>
+        </li>
+        <!--            <li class="btn_on menu_pres"><a href="mission_try.php">我的檔案</a></li>-->
+        <li class="btn_on menu_normal"><a href="member.php">我的檔案</a></li>
+        <li class="btn_on">
+          <i id="icon_nav" class="icon_nav"></i>
+          <div class="nav">
+            <ol>
+              <li class=""><a href="music_foru.php">點歌紀錄</a></li>
+              <li class=""><a href="present_foru.php">禮物紀錄</a></li>
+              <li class=""><a href="meetchat.php">見面紀錄</a></li>
+              <li class=""><a href="member.php">我的檔案</a></li>
+              <li class=""><a href="setting_pair.php">我的設定</a></li>
+              <li class=""><a class="">登出</a></li>
+            </ol>
+          </div>
+        </li>
+        <!--<li class="btn_on menu_logout"><a href="">登出</a></li>-->
+      </ul>
+      <ul class="navMenu height_NAV clear CGc">
+        <!-- 手機 Menu -->
+        <li><a href="member.php"><i class="icon_mn_myfile"></i>我的檔案</a></li>
+        <li><a href="deposit.php"><i class="icon_mn_deposit"></i>會員加值</a></li>
+        <li><a href="setting_pair.php"><i class="icon_mn_setting"></i>我的設定</a></li>
+        <!--
+			<li><a href="music_foru.php"><i class="icon_mn_music"></i>點歌紀錄</a></li>
+			<li><a href="present_foru.php"><i class="icon_mn_coffee"></i>禮物紀錄</a></li>
+			<li><a href="meetchat.php"><i class="icon_mn_meetchat"></i>見面紀錄</a></li>
+			-->
+        <li><a href="mission_try.php"><i class="icon_mn_present"></i>免費試用</a></li>
+        <li><a href="static_qa.php"><i class="icon_mn_queation"></i>常見問題</a></li>
+        <li><a href="static_skill.php"><i class="icon_mn_meetchat"></i>聊天技巧</a></li>
+        <li><a><i class="icon_logout"></i>登出</a></li>
+        <!--
+			<li class="footOnHeader">
+				<div class="footerCont">
+					<ul class="footerMore CGt">
+						<li><a href="about.php"><i class="icon_ft_about"></i>關於我們</a></li>
+						<li><a href="contact.php"><i class="icon_ft_contact"></i>聯絡我們</a></li>
+						<li><a href="uselaw.php"><i class="icon_ft_uselaw"></i>使用條款</a></li>
+						<li><a href="private.php"><i class="icon_ft_private"></i>隱私權政策</a></li>
+					</ul>
+					<ul><li><p>版權所有 © 2016 闌珊處網路股份有限公司 <span>台北市中正區新生南路一段50號12樓B室</span></p></li></ul>
+				</div>
+			</li>
+		   -->
+      </ul>
+      <ul class="navBar CGt">
+        <li><i></i><i></i><i></i></li>
+      </ul>
+    </div>
+    <div class="subHeader unselectable">
+      <ul class="on">
+        <li class="menu_new"><a href="/C1_newlist.php" class="router-link-active">
+            <p>最新名單</p><i>20</i>
+          </a></li>
+        <li class="menu_pair"><a href="/C1_friends.php" class="router-link-exact-active router-link-active">
+            <p>我的朋友</p><i>20</i>
+          </a></li>
+        <li class="menu_coffee"><a href="/C1_datings.php" class="">
+            <p>我的約會</p><i>20</i>
+          </a></li>
+        <li class="menu_paid"><a href="/premium" class="">
+            <p>會員加值</p><i>20</i>
+          </a></li>
+        <li id="menu_chat" class="menu_chat"><a><i>90</i></a>
+          <div id="chatlistPad" class="chatlistPad headerListPop CG_scorll height_R2">
+            <ul>
+              <li><a href="/chat-room/211484" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/_617695c5e4d23/m_rnstldepshe5.617695c5f41158.51007924.jpg">
+                  </div>
+                  <div><strong class="online">波波</strong>
+                    <p>你好，我是波波</p>
+                  </div>
+                  <div><span>1 個月前</span></div>
+                </a></li>
+              <li><a href="/chat-room/4679" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/54/bc/1d/cd/bd/m_iiha9gu7818l.5bace515a36db7.33293808.jpg">
+                  </div>
+                  <div><strong class="online">Charlene</strong>
+                    <p>很高興認識你</p>
+                  </div>
+                  <div><span>7 個月前</span></div>
+                </a></li>
+              <li><a href="/chat-room/6357" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/89/43/7a/43/89/m_9cg3mnbierpq.5bc85f3a529aa4.92575923.jpg">
+                  </div>
+                  <div><strong class="online">Chi</strong>
+                    <p>灑花☆*`'*-.,_☆</p>
+                  </div>
+                  <div><span>7 個月前</span></div>
+                </a></li>
+              <!---->
+            </ul>
+          </div>
+        </li>
+        <li id="menu_mesg" class="menu_mesg"><a><i>90</i></a>
+          <div id="noticelistPad" class="noticelistPad headerListPop CG_scorll height_R2">
+            <ul>
+              <!---->
+              <li><a href="/chat-room/223687" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/_620ab1e169387/l_qbrpqjhe1cf1.620ab1e1e7f673.27848506.jpg">
+                  </div>
+                  <div><strong class="online">Erin Liu</strong>
+                    <p>你跟Erin Liu已經成為朋友，快去聊天室敲定見面時間地點吧! </p>
+                  </div>
+                  <div><span>7 天前</span></div>
+                </a></li>
+              <li><a href="/matches/223687" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/_620ab1e169387/l_qbrpqjhe1cf1.620ab1e1e7f673.27848506.jpg">
+                  </div>
+                  <div><strong class="online">Erin Liu</strong>
+                    <p>Erin Liu已讀過你的契合報告</p>
+                  </div>
+                  <div><span>7 天前</span></div>
+                </a></li>
+              <li><a href="/chat-room/219926" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/_61daba20950f5/l_r15hs64elqh0.61daba20edd1d5.33382663.jpg">
+                  </div>
+                  <div><strong class="offline">周玟</strong>
+                    <p>你跟周玟已經成為朋友，快去聊天室敲定見面時間地點吧! </p>
+                  </div>
+                  <div><span>7 天前</span></div>
+                </a></li>
+              <li><a href="/matches/219926" class="">
+                  <div><img alt=""
+                      src="https://www.cdn.meettheone.com.tw/_61daba20950f5/l_r15hs64elqh0.61daba20edd1d5.33382663.jpg">
+                  </div>
+                  <div><strong class="offline">周玟</strong>
+                    <p>周玟已讀過你的契合報告</p>
+                  </div>
+                  <div><span>7 天前</span></div>
+                </a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <!--        <ul class="on">-->
+      <!--            <li class="menu_pair"><a href="C1_newlist.php"><p>最新名單</p><i>19</i></a></li>-->
+      <!--            <li class="menu_pair"><a href="C1_friends.php"><p>我的好友</p><i>19</i></a></li>-->
+      <!--            <li class="menu_pair"><a href="C1_datings.php"><p>我的約會</p><i>19</i></a></li>-->
+      <!--            <li class="menu_pair"><a href="mypairlist.php"><p>我的配對</p><i>19</i></a></li>-->
+      <!--            <li class="menu_test"><a href="testing_main_1report.php"><p>我的測驗</p></a></li>-->
+      <!--            <li class="menu_group"><a href="grouppairlist.php"><p>多對多聯誼</p></a></li>-->
+      <!--            <li id="menu_chat" class="menu_chat">-->
+      <!--                <a><i>1</i></a>-->
+      <!--                <div id="chatlistPad" class="chatlistPad headerListPop CG_scorll height_R2">-->
+      <!--                    -->
+      <!--                </div>-->
+      <!--            </li>-->
+      <!--            <li class="menu_read"><a href="articlelist.php"><p>閱讀愛情</p><i>11</i></a></li>-->
+      <!--            <li class="menu_paid"><a href="deposit.php"><p>會員加值</p><i>97</i></a></li>-->
+      <!--            <li id="menu_mesg" class="menu_mesg">-->
+      <!--                <a><i>99</i></a>-->
+      <!--                <div id="noticelistPad" class="noticelistPad headerListPop CG_scorll height_R2">-->
+      <!--                    -->
+      <!--                </div>-->
+      <!--            </li>-->
+      <!--        </ul>-->
+    </div>
+    <div class="popBodyHeader"></div>
+  </div>
+  <div id="main">
+
+    <section class="main-content">
+
+      <!-- banner -->
+      <section>
+        <div class="video-block-sty-1 no-radius full-width banner-video" id="video-3">
+
+          <div class="video-img mobile-display-block"
+            style="background-image:url('images/index6/video-bg-1-mobile.jpg')"></div>
+
+          <div class="video-img mobile-display-none" style="background-image:url('images/index6/video-bg-1.jpg');">
+            <!-- <img class="video-img" src="images/index6/video-bg-3.jpg" alt=""> -->
+          </div>
+
+          <span class="video-text">
+            <h4 class="title">5對心靈伴侶<br><span class="txt-small">真心話老實說</span></h4>
+          </span>
+
+          <button type="button" class="btnLightbox">
+            <span class="video-btn">
+              <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70px" height="70px"
+                viewBox="0 0 50 50" enable-background="new 0 0 50 50">
+                <g>
+                  <path opacity="0.88" fill="#FC5B62" enable-background="new" d="M25,0C11.193,0,0,11.193,0,25c0,13.807,11.193,25,25,25
+		c13.807,0,25-11.193,25-25C50,11.193,38.807,0,25,0z M18.5,34V16l17,9L18.5,34z" />
+                  <polygon fill="#FFFFFF" points="18.5,34 35.5,25 18.5,16 	" />
+                </g>
+              </svg>
+            </span>
+          </button>
+
+          <div class="top-title">
+            遇見你的靈魂伴侶
+          </div>
+
+          <div class="text-box-sty1">
+            <h1 class="title">
+              心理學測驗<br>
+              找到內外契合的另一半
+            </h1>
+            <h4 class="sub-title">
+              政大心理系教授、海苔熊推薦
+            </h4>
+            <div class="btn-box">
+              <a href="#" class="btn btn-sty1">
+                開始心理學測驗 <span class="txt-small">(10分鐘)</span>
+              </a>
+              <br>
+              <button type="button" class="btn btn-sty3 exampleOpenBtn">看報告範例</button>
+            </div>
+          </div>
+
+          <div class="date-number">
+            <div class="label">
+              見面約會完成對數
+            </div>
+            <div class="nums">
+              <span class="num">4</span>
+              <span class="num">3</span>
+              <span class="num">8</span>
+              <span class="num">7</span>
+              <span class="num">1</span>
+            </div>
+          </div>
+
+
+          <div class="lightboxTarget">
+            <div class="content-box videoLightboxBlock">
+              <div id="video_iframe_3"></div>
+              <button class="lightboxClose" type="button">X</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end banner -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+
+      <!-- 21 對成功案例 -->
+      <section class="success_block">
+        <div>
+          <header class="header-sty2">
+            <h2 class="title">20對成功案例</h2>
+          </header>
+        </div>
+
+        <div class="pt-2 pb-3 sp-pt-0 sp-pb-2"></div>
+
+        <!-- 1460 電腦版 -->
+        <div class="mobile-display-none">
+          <div class="success_wrapper">
+            <div class="success_laptop_block">
+
+              <div id="success_laptop_Slider" class="success-slider slider-sty1">
+                <div class="wrapper">
+                  <div id="success_laptop_Slides" class="slides">
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-1.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">嘉駿 (左):</span>
+                                我們有多重身分，不僅是男女朋友，還是最好的閨蜜，更是最支持彼此的家人，生活中充滿了無法套招的默契。
+                                <span>嘉駿、湘羽 (交往中)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-17.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">元朗 (右):</span>
+                                我遇到了soulmate，身心靈都很合，我們之間的分享很細膩而且通透，兩個人在感受力、智商、價值觀都很接近
+                                <span>聖果、元朗 (準備結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-2.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">佳儒 (左):</span>
+                                我找到心靈上能互相扶持的伴侶，我們的個性互補，興趣、價值觀相仿，一切都在相處中越來越好。
+                                <span>佳儒、彥志 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-3.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">阿仁 (左): </span>
+                                用過超多軟體...聊過及見過超多的約會對象，但結果都不盡人意，感謝這裡的專業心理學配對，讓我們相遇，她是真正適合我的人。
+                                <span>阿仁、莊敏 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-4.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">郁富 (左):</span>
+                                我們是彼此的靈魂伴侶，價值觀相近，有共同的未來藍圖，很有默契，還生了一對可愛的雙胞胎
+                                <span>郁富、昀祁 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-5.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">庭君 (左):</span>
+                                覺得很神奇，像認識很久一般的自然，個性、價值觀都很合，已推薦給三四個朋友，因為老公的朋友也在這裡認識現在的老婆。
+                                <span>濠隆、庭君 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-6.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">伯彥 (右):</span>
+                                我找到能一起分享喜悅與煩惱，彼此相似又互補，將肩並肩走一輩子的愛情，不害怕揭露脆弱，低落時能夠陪伴和扶持。
+                                <span>伯彥、少培 (準備結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-7.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">與凡 (左):</span>
+                                一切都很合拍，一切順心，能遇到這麼契合的人真的很難得，我們都愛潛水、都是貓控、都是體貼對方的人。
+                                <span>向榮、與凡 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-8.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">家玉 (左):</span>
+                                非常契合的心靈夥伴，不只三觀合，很好聊天，彼此的想法都能理解和同理，喜歡吃相似的食物，還有很多很多...
+                                <span>子堯、家玉 (準備結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-9.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">彩玲 (左):</span>
+                                單身20多年，第一次約會就遇見我先生，當天我們聊了一個下午，交往1年、結婚2年，很幸福、很喜樂。
+                                <span>彩玲、英華 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-10.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">明軒、冠伶:</span>
+                                我們有相同的價值觀與信仰，無所不談，都喜歡音樂和戶外活動，很開心遇見如靈魂伴侶般契合的另一半。
+                                <span>明軒、冠伶 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-11.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">星帆 (右):</span>
+                                感到非常幸福，過去在各種交友管道都無法順利找到契合的對象，在這裡不到半年內就找到生命中的那個人。
+                                <span>星帆、蓮如 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-12.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">曉萱 (左):</span>
+                                真的很感謝你們讓我們相遇，我在工作時遇到傷心難過的事情時，老公是我最大的心靈後盾，我真的很開心能跟他結婚。
+                                <span>珈榮、曉萱 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-14.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">雅如 (左):</span>
+                                第一次見面時，感覺話題都聊不完，結婚一年，遇到對的人、了解我的人，可以一起努力相伴一生，覺得幸福。
+                                <span>韋翔、雅如 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-15.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">彥漢 (左):</span>
+                                我們在信仰與價值觀念很合，個性都很隨和，相處上沒有過多的眉眉角角，還好有這個交友平台，結婚一年多，很幸福。
+                                <span>彥漢、恩琦 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-16.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">佳琳 (右):</span>
+                                我們想法很接近，常常在想同一件事，甚至同時說出來，永遠抓的到對方的tone，他懂我知道我需要什麼，也很主動為我分擔。
+                                <span>定廉、佳琳 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-17.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">秀昌 (右):</span>
+                                我們都是第一次約會就遇到對方，興趣很像，喜歡吃吃喝喝，還有一起看動畫、玩遊戲，很接近我理想中的關係。
+                                <span>秀昌、佑甄 (準備結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-18.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">柏伸 (右):</span>
+                                我們會很有默契地做出同樣決定，像是不約而同穿著同樣顏色的衣服，內在邏輯很類似，所以溝通也比較容易
+                                <span>柏伸、玖慧 (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-19.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">Sophia (右):</span>
+                                很感謝讓我遇見老公，心理學分析讓我們可以避開對方的地雷，對往後的相處相當有幫助，真的很謝謝你們帶給我幸福！
+                                <span>阿同、Sophia (已結婚)</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/success-20.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">意然 (左):</span>
+                                我有主見，他很隨和，這點我們很合，他很體貼，是適合一起生活的人。
+                                <span>泰億、意然 (交往中)</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                  </div>
+                </div>
+                <a id="success_laptop_prev" class="control prev"></a>
+                <a id="success_laptop_next" class="control next"></a>
+                <ul class="dotsList"></ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- end 1460 電腦版 -->
+
+        <!-- 767 手機版 -->
+        <div class="mobile-display-block">
+          <div class="success_mobile_block">
+
+            <div id="" class="success-slider slider-sty1">
+              <div class="wrapper">
+                <div id="" class="slides">
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-1.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">嘉駿 (左):</span>
+                              我們有多重身分，不僅是男女朋友，還是最好的閨蜜，更是最支持彼此的家人，生活中充滿了無法套招的默契。
+                              <span>嘉駿、湘羽 (交往中)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-17.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">元朗 (右):</span>
+                              我遇到了soulmate，身心靈都很合，我們之間的分享很細膩而且通透，兩個人在感受力、智商、價值觀都很接近
+                              <span>聖果、元朗 (準備結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-2.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">佳儒 (左):</span>
+                              我找到心靈上能互相扶持的伴侶，我們的個性互補，興趣、價值觀相仿，一切都在相處中越來越好。
+                              <span>佳儒、彥志 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-3.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">阿仁 (左): </span>
+                              用過超多軟體...聊過及見過超多的約會對象，但結果都不盡人意，感謝這裡的專業心理學配對，讓我們相遇，她是真正適合我的人。
+                              <span>阿仁、莊敏 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-4.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">郁富 (左):</span>
+                              我們是彼此的靈魂伴侶，價值觀相近，有共同的未來藍圖，很有默契，還生了一對可愛的雙胞胎
+                              <span>郁富、昀祁 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-5.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">庭君 (左):</span>
+                              覺得很神奇，像認識很久一般的自然，個性、價值觀都很合，已推薦給三四個朋友，因為老公的朋友也在這裡認識現在的老婆。
+                              <span>濠隆、庭君 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-6.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">伯彥 (右):</span>
+                              我找到能一起分享喜悅與煩惱，彼此相似又互補，將肩並肩走一輩子的愛情，不害怕揭露脆弱，低落時能夠陪伴和扶持。
+                              <span>伯彥、少培 (準備結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-7.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">與凡 (左):</span>
+                              一切都很合拍，一切順心，能遇到這麼契合的人真的很難得，我們都愛潛水、都是貓控、都是體貼對方的人。
+                              <span>向榮、與凡 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-8.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">家玉 (左):</span>
+                              非常契合的心靈夥伴，不只三觀合，很好聊天，彼此的想法都能理解和同理，喜歡吃相似的食物，還有很多很多...
+                              <span>子堯、家玉 (準備結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-9.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">彩玲 (左):</span>
+                              單身20多年，第一次約會就遇見我先生，當天我們聊了一個下午，交往1年、結婚2年，很幸福、很喜樂。
+                              <span>彩玲、英華 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-10.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">明軒、冠伶:</span>
+                              我們有相同的價值觀與信仰，無所不談，都喜歡音樂和戶外活動，很開心遇見如靈魂伴侶般契合的另一半。
+                              <span>明軒、冠伶 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-11.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">星帆 (右):</span>
+                              感到非常幸福，過去在各種交友管道都無法順利找到契合的對象，在這裡不到半年內就找到生命中的那個人。
+                              <span>星帆、蓮如 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-12.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">曉萱 (左):</span>
+                              真的很感謝你們讓我們相遇，我在工作時遇到傷心難過的事情時，老公是我最大的心靈後盾，我真的很開心能跟他結婚。
+                              <span>珈榮、曉萱 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-14.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">雅如 (左):</span>
+                              第一次見面時，感覺話題都聊不完，結婚一年，遇到對的人、了解我的人，可以一起努力相伴一生，覺得幸福。
+                              <span>韋翔、雅如 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-15.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">彥漢 (左):</span>
+                              我們在信仰與價值觀念很合，個性都很隨和，相處上沒有過多的眉眉角角，還好有這個交友平台，結婚一年多，很幸福。
+                              <span>彥漢、恩琦 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-16.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">佳琳 (右):</span>
+                              我們想法很接近，常常在想同一件事，甚至同時說出來，永遠抓的到對方的tone，他懂我知道我需要什麼，也很主動為我分擔。
+                              <span>定廉、佳琳 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-17.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">秀昌 (右):</span>
+                              我們都是第一次約會就遇到對方，興趣很像，喜歡吃吃喝喝，還有一起看動畫、玩遊戲，很接近我理想中的關係。
+                              <span>秀昌、佑甄 (準備結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-18.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">柏伸 (右):</span>
+                              我們會很有默契地做出同樣決定，像是不約而同穿著同樣顏色的衣服，內在邏輯很類似，所以溝通也比較容易
+                              <span>柏伸、玖慧 (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-19.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">Sophia (右):</span>
+                              很感謝讓我遇見老公，心理學分析讓我們可以避開對方的地雷，對往後的相處相當有幫助，真的很謝謝你們帶給我幸福！
+                              <span>阿同、Sophia (已結婚)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/success-20.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">意然 (左):</span>
+                              我有主見，他很隨和，這點我們很合，他很體貼，是適合一起生活的人。
+                              <span>泰億、意然 (交往中)</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- end 767 手機版 -->
+
+      </section>
+      <!-- end 21 對成功案例 -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+      <!-- Bar區 -->
+      <section class="button-padding">
+        <div class="button-section">
+          <div class="btn-box text-center">
+            <a href="#" class="btn-sty1">
+              開始心理學測驗 <span class="txt-small">(10分鐘)</span>
+            </a>
+            <div class="pt-2"></div>
+            <button type="button" class="btn btn-sty3 exampleOpenBtn">看報告範例</button>
+          </div>
+        </div>
+      </section>
+      <!-- end Bar區 -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+
+      <!-- 影片 (Lightbox) -->
+      <section>
+        <div>
+          <header class="header-sty2">
+            <h2 class="title">找到對的人，如何辦到?</h2>
+          </header>
+        </div>
+        <div class="pt-2 pb-3 sp-pb-0"></div>
+
+        <div class="videoHeader-padding">
+          <div class="videoHeader-wrapper">
+
+            <div class="header-block">
+              <h4 class="title">
+                茫茫人海，你又超忙？<br />
+                沒問題，我們來處理
+              </h4>
+            </div>
+
+            <div class="video-block video-block-sty-1 no-radius" id="video-1">
+              <button type="button" class="btnLightbox">
+                <div class="mobile-display-none"
+                  style="background: url('images/index6/video-bg-2.jpg') center; background-size: 1013px; height:100%;">
+                </div>
+                <img class="video-img mobile-display-block" src="images/index6/video-bg-2-mobile.jpg" alt="">
+                <span class="video-btn">
+                  <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70px" height="70px"
+                    viewBox="0 0 50 50" enable-background="new 0 0 50 50">
+                    <g>
+                      <path opacity="0.88" fill="#FC5B62" enable-background="new" d="M25,0C11.193,0,0,11.193,0,25c0,13.807,11.193,25,25,25
+		c13.807,0,25-11.193,25-25C50,11.193,38.807,0,25,0z M18.5,34V16l17,9L18.5,34z" />
+                      <polygon fill="#FFFFFF" points="18.5,34 35.5,25 18.5,16 	" />
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <div class="lightboxTarget">
+                <div class="content-box videoLightboxBlock">
+                  <div id="video_iframe_1"></div>
+                  <button class="lightboxClose" type="button">X</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end 影片 (Lightbox) -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+
+      <!-- 遇見靈魂伴侶 -->
+      <section class="animate-overflow">
+        <div class="">
+          <header class="header-sty2">
+            <h2 class="title">遇見靈魂伴侶，有更科學的方法</h2>
+            <p class="lead">14種分析，排除95%不適人選</p>
+          </header>
+        </div>
+
+        <div>
+
+          <!-- 對照用 -->
+          <!-- <div style="background: url(images/index6/p-2.jpg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 1720px;
+            opacity: 0;
+            background-repeat: no-repeat;
+            background-position: center calc(50% - 5px);">
+          </div> -->
+          <!-- <div style="    background: url(images/index6/p-3.png);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 321px;
+            opacity: 0.3;
+            background-repeat: no-repeat;
+            background-position: center calc(50% - 3px);">
+          </div> -->
+
+          <div class="animate-wrapper">
+            <div class="animate-block-2 circle-box" id="animate_block_2">
+
+              <div class="middle">
+                <div class="out-dots"></div>
+                <div class="loader"></div>
+                <div class="loaderRotate"></div>
+                <div class="up-text">
+                  <div class="number"></div>
+                  <div class="line"></div>
+                  <div class="text"></div>
+                </div>
+              </div>
+
+              <!-- 電腦版 -->
+              <div class="circle-list mobile-display-none">
+                <ul>
+
+                  <!-- 1 -->
+                  <li class="cir-11 small" style="
+                    --c-delay: .3s;
+                    --c-trans: translate(200%, 0%);">
+                    <span class="hover" style="left: 30px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, 0px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #e16e6a;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 2 -->
+                  <li class="cir-10 bigger" style="
+                    --c-delay: .5s;
+                    --c-trans: translate(200%, 50%);">
+                    <span class="hover" style="left: 56px; top: 24px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, 0px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-162deg);
+                    --ld-color: #339cd0;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 3 -->
+                  <li class="cir-8 small" style="
+                    --c-delay: .7s;
+                    --c-trans: translate(200%, 200%);">
+                    <span class="hover" style="top: 15px;left: 15px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, -40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-132deg);
+                    --ld-color: #75bf77;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 4 -->
+                  <li class="cir-12 big" style="
+                    --c-delay: .9s;
+                    --c-trans: translate(200%, -50%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, 40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-199deg);
+                    --ld-color: #e89211;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 5 -->
+                  <li class="cir-1 small" style="
+                    --c-delay: 1.1s;
+                    --c-trans: translate(-200%, -200%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, 40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(50deg);
+                    --ld-color: #f29957;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 6 -->
+                  <li class="cir-3 bigger" style="
+                    --c-delay: 1.3s;
+                    --c-trans: translate(-200%, -50%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, 40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(18deg);
+                    --ld-color: #20aea9;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 7 -->
+                  <li class="cir-5 medium" style="
+                    --c-delay: 1.5s;
+                    --c-trans: translate(-200%, 50%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, 0);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-18deg);
+                    --ld-color: #e16f6b;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 8 -->
+                  <li class="cir-7 small" style="
+                    --c-delay: 1.7s;
+                    --c-trans: translate(-200%, 200%);">
+                    <span class="hover" style="top: 14px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, -40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-50deg);
+                    --ld-color: #a35da1;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 9 -->
+                  <li class="cir-14 small" style="
+                    --c-delay: 1.9s;
+                    --c-trans: translate(200%, -200%);">
+                    <span class="hover" style="left: 30px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, 40px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-230deg);
+                    --ld-color: #c39d61;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 10 -->
+                  <li class="cir-13 small" style="
+                    --c-delay: 2.1s;
+                    --c-trans: translate(200%, -200%);">
+                    <span class="hover" style="left: 30px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, 40px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #9783bb;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 11 -->
+                  <li class="cir-4 small" style="
+                    --c-delay: 2.3s;
+                    --c-trans: translate(-200%, 0%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, 0px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #75bf77;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 12 -->
+                  <li class="cir-9 small" style="
+                    --c-delay: 2.5s;
+                    --c-trans: translate(200%, 200%);">
+                    <span class="hover" style="top: 5px;left: 14px;"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-40px, -40px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #f4cf53;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 13 -->
+                  <li class="cir-6 small" style="
+                    --c-delay: 2.7s;
+                    --c-trans: translate(-200%, 200%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, -40px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #808081;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 14 -->
+                  <li class="cir-2 small" style="
+                    --c-delay: 2.9s;
+                    --c-trans: translate(-200%, -200%);">
+                    <span class="hover"></span>
+                    <span class="circle" style="
+                    --c-rotate-a: translate(40px, 40px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #52aac3;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- end 電腦版 -->
+
+              <!-- 手機版 -->
+              <div class="circle-list mobile-display-block">
+                <ul>
+                  <!-- 1 -->
+                  <li class="cir-11 small" style="
+                    --c-delay: .3s;
+                    --c-trans: translate(200%, 0%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-20px, 0px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #e16e6a;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 2 -->
+                  <li class="cir-10 bigger" style="
+                    --c-delay: .5s;
+                    --c-trans: translate(200%, 400%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(0px, -20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-100deg);
+                    --ld-color: #339cd0;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 3 -->
+                  <li class="cir-8 small" style="
+                    --c-delay: .7s;
+                    --c-trans: translate(200%, 400%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-20px, -20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-132deg);
+                    --ld-color: #75bf77;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 4 -->
+                  <li class="cir-12 bigger" style="
+                    --c-delay: .9s;
+                    --c-trans: translate(200%, -400%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(0px, 20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-258deg);
+                    --ld-color: #e89211;
+                    --l-width: 15px;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 5 -->
+                  <li class="cir-1 small" style="
+                    --c-delay: 1.1s;
+                    --c-trans: translate(-200%, -200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(20px, 20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(50deg);
+                    --ld-color: #f29957;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 6 -->
+                  <li class="cir-3 bigger" style="
+                    --c-delay: 1.3s;
+                    --c-trans: translate(-200%, -400%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(0px, 20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(77deg);
+                    --ld-color: #20aea9;
+                    --l-width: 95px;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 7 -->
+                  <li class="cir-5 medium" style="
+                    --c-delay: 1.5s;
+                    --c-trans: translate(-200%, 400%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(0, -20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-72deg);
+                    --ld-color: #e16f6b;
+                    --l-width: 15px;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 8 -->
+                  <li class="cir-7 small" style="
+                    --c-delay: 1.7s;
+                    --c-trans: translate(-200%, 200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(20px, -20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-50deg);
+                    --ld-color: #a35da1;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 9 -->
+                  <li class="cir-14 small" style="
+                    --c-delay: 1.9s;
+                    --c-trans: translate(200%, -200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-20px, 20px);
+                    "></span>
+                    <span class="line" style="
+                    --l-rotate: rotate(-230deg);
+                    --ld-color: #c39d61;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 10 -->
+                  <li class="cir-13 small" style="
+                    --c-delay: 2.1s;
+                    --c-trans: translate(200%, -200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-20px, 20px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #9783bb;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 11 -->
+                  <li class="cir-4 small" style="
+                    --c-delay: 2.3s;
+                    --c-trans: translate(-200%, 0%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(20px, 0px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #75bf77;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 12 -->
+                  <li class="cir-9 small" style="
+                    --c-delay: 2.5s;
+                    --c-trans: translate(200%, 200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(-20px, -20px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #f4cf53;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 13 -->
+                  <li class="cir-6 small" style="
+                    --c-delay: 2.7s;
+                    --c-trans: translate(-200%, 200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(20px, -20px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #808081;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                  <!-- 14 -->
+                  <li class="cir-2 small" style="
+                    --c-delay: 2.9s;
+                    --c-trans: translate(-200%, -200%);">
+                    <span class="circle" style="
+                    --c-rotate-a: translate(20px, 20px);
+                    "></span>
+                    <span class="point" style="
+                    --ld-color: #52aac3;">
+                      <span class="dot"></span>
+                    </span>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- end 手機版 -->
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- end 遇見靈魂伴侶 -->
+
+      <div class="pt-2"></div>
+
+      <!-- 雙向契合度報告 -->
+      <section>
+        <div>
+          <header class="header-sty2">
+            <p class="lead">雙向契合報告，不用摸黑探索</p>
+          </header>
+        </div>
+        <div class="pb-2"></div>
+        <div>
+          <div class="animate-wrapper">
+            <div class="animate-block-1" id="animate_block_1">
+              <div class="box box-1">
+                <div class="loaderShadow"></div>
+                <div class="loader"></div>
+                <div class="loaderRotate"></div>
+                <div class="circle"></div>
+                <div class="title">
+                  <span class="text">
+                    <span class="letter-one">
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                      <span class="letter">
+                        OSPD
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <div class="card"></div>
+                <div class="shadow"></div>
+              </div>
+              <div class="box box-2">
+                <div class="loaderShadow"></div>
+                <div class="loader"></div>
+                <div class="loaderRotate"></div>
+                <div class="circle"></div>
+                <div class="title">
+                  <span class="text counter">
+                    <span class="first-numbers">
+                      <span>0</span>
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                      <span>9</span>
+                    </span>
+                    <span class="second-numbers">
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                      <span>9</span>
+                      <span>0</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="card"></div>
+                <div class="shadow"></div>
+              </div>
+              <div class="box box-3">
+                <div class="loaderShadow"></div>
+                <div class="loader"></div>
+                <div class="loaderRotate"></div>
+                <div class="circle"></div>
+                <div class="title">
+                  <span class="text counter">
+                    <span class="first-numbers">
+                      <span>0</span>
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                      <span>9</span>
+                    </span>
+                    <span class="second-numbers">
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                      <span>9</span>
+                      <span>4</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="card"></div>
+                <div class="shadow"></div>
+              </div>
+              <div class="icons">
+                <span class="green"><i></i>你</span>
+                <span class="red"><i></i>對方</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end 雙向契合度報告 -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+      <!-- Bar區 -->
+      <section class="button-padding">
+        <div class="button-section">
+          <div class="btn-box text-center">
+            <a href="#" class="btn-sty1">
+              開始心理學測驗 <span class="txt-small">(10分鐘)</span>
+            </a>
+            <div class="pt-2"></div>
+            <button type="button" class="btn btn-sty3 exampleOpenBtn">看報告範例</button>
+          </div>
+        </div>
+      </section>
+      <!-- end Bar區 -->
+
+      <div class="pt-2 sp-display-none"></div>
+
+      <div class="pt-5 sp-display-block"></div>
+
+      <span class="hr hr-90 sp-display-block"></span>
+
+      <div class="pt-5"></div>
+
+      <!-- Card區 -->
+      <section>
+        <div>
+          <header class="header-sty2">
+            <h2 class="title">以見面聊為前提</h2>
+            <p class="lead">2種方式任你選</p>
+          </header>
+        </div>
+        <div class="pt-2 pb-3"></div>
+        <div class="chatStyle-padding">
+          <div class="chatStyle-wrapper">
+            <div class="chat-block">
+              <div class="card-sty7 mb-3">
+                <h3 class="title">實體見面</h3>
+                <div class="img-box">
+                  <img src="images/index5/e/20.jpg" alt="">
+                </div>
+                <p class="desc">
+                  敲定時間、地點，我們來訂位！可以各帶一位朋友，約會更安心。
+                </p>
+              </div>
+              <div class="card-sty7 mb-3">
+                <h3 class="title">一對一視訊</h3>
+                <div class="img-box">
+                  <img src="images/index5/e/21_1.jpg" alt="">
+                </div>
+                <p class="desc">
+                  專注認識彼此，可自由搭配「三階段約會話題」，聊天不句點。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end Card區 -->
+
+      <div class="pt-2 pb-2 sp-pt-0"></div>
+
+      <!-- banner video -->
+      <section>
+        <div>
+          <header class="header-sty2">
+            <h2 class="title">聊過的人怎麼說?</h2>
+          </header>
+        </div>
+        <div class="pt-2 pb-3 sp-pb-0"></div>
+        <div class="videoHeader-padding">
+          <div class="videoHeader-wrapper">
+            <div class="video-block video-block-sty-1 no-radius" id="video-2">
+              <button type="button" class="btnLightbox">
+
+                <div class="mobile-display-none"
+                  style="background: url('images/index6/video-bg-3.jpg') center; background-size:cover; height:100%;">
+                </div>
+
+                <img class="video-img mobile-display-block" src="images/index6/video-bg-3-mobile.jpg" alt="">
+
+                <span class="video-text">
+                  <h4 class="title">見面聊體驗<br><span class="txt-small">終極大公開</span></h4>
+                </span>
+                <span class="video-btn">
+                  <svg version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70px" height="70px"
+                    viewBox="0 0 50 50" enable-background="new 0 0 50 50">
+                    <g>
+                      <path opacity="0.88" fill="#FC5B62" enable-background="new" d="M25,0C11.193,0,0,11.193,0,25c0,13.807,11.193,25,25,25
+		c13.807,0,25-11.193,25-25C50,11.193,38.807,0,25,0z M18.5,34V16l17,9L18.5,34z" />
+                      <polygon fill="#FFFFFF" points="18.5,34 35.5,25 18.5,16 	" />
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <div class="lightboxTarget">
+                <div class="content-box videoLightboxBlock">
+                  <div id="video_iframe_2"></div>
+                  <button class="lightboxClose" type="button">X</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-block">
+              <h4 class="title">
+                怕遇到怪人、花時間？<br />
+                別擔心，聊過的都說好
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end banner video -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+      <!-- 21 個見面後的感想 -->
+      <section class="feedback_block">
+        <div>
+          <header class="header-sty2">
+            <h2 class="title">20個見面後的感想</h2>
+          </header>
+        </div>
+
+        <div class="pt-2 pb-3 sp-pt-0 sp-pb-2"></div>
+
+        <!-- 1460 電腦版 -->
+        <div class="mobile-display-none">
+          <div class="feedback_wrapper">
+            <div class="feedback_laptop_block">
+
+              <div id="feedback_laptop_Slider" class="feedback_slider slider-sty1">
+                <div class="wrapper">
+                  <div id="feedback_laptop_Slides" class="slides">
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-1.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">向榮 (右):</span>
+                                三次見面聊的經驗都不錯，可以專注在一對一的互動上，很適合我這種不擅長線上聊天的人。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-2.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">莊敏 (左):</span>
+                                我們都認同不用訊息聊天、直接見面的方式，感謝約會餐廳的代訂服務，對女生比較安全。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-3.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">彩玲 (左):</span>
+                                見面聊比較踏實，可以了解對方是否真實、有誠意，體驗後感覺很輕鬆、也不浪費彼此時間。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-4.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">雅如 (左):</span>
+                                對於一開始就約見面聊，蠻期待的也很開心，因為見面可以看得到對方，線上聊沒有現場感。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-5.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">佳儒 (左):</span>
+                                我個人比較喜歡有溫度的真實相處，見面前好好看一下配對報告，可以讓聊天的話題多好多。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-6.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">明軒、冠伶:</span>
+                                見到本人可以更實際地了解對方，安排見面的餐廳很棒，也很安全，可以帶朋友去，減少顧慮。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-7.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">濠隆 (左):</span>
+                                線上聊容易有距離感、尷尬，內向者很難更進一步，實際見面後，覺得比想像中更容易有交集。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-8.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">少培 (左):</span>
+                                見面聊真的最準，網路聊天太多照騙，還有一些很會線上聊，見面才發現無法有好感。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-9.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">佑甄 (右):</span>
+                                見面聊無法偽裝比較不浪費時間，我用心理學報告找出共同興趣，發現很好聊。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-10.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">恩琦 (左):</span>
+                                十分嚴謹和安全的online dating，讓我很有安全感，見面互動可以更加真實認識一個人。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-12.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">郁富 (左):</span>
+                                剛碰面時會緊張，後來就能放輕鬆認識，我喜歡面對面的互動，有些東西隔著網路無法知道。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-13.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">蓮如 (左):</span>
+                                有兼顧安全及會員品質，餐廳都在熱鬧地點滿安全的，對象有一定的素質，也都有話題可聊。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-14.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">子堯 (右):</span>
+                                見面的感覺不錯，能當面瞭解對方的真實性，也能快速找到話題，因為平台已提供對方的情況。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-15.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">玖慧 (左):</span>
+                                我比較喜歡看到真人，線上聊難猜彼此真實想法，第一次就見面（直球對決）很乾脆很坦然。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-16.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">湘羽 (左):</span>
+                                聊過後覺得很真實，見面看得到表情、聽得到語氣，話題或節奏更有彈性且能及時回應。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-17.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">聖果 (左):</span>
+                                我喜歡見面聊，因為不管是情緒上還是感受上，見面更能有連接，網絡聊天好累好沒用。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-18.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">珈榮 (左):</span>
+                                直接見面聊最有效率，而且要保持平常心，要當成是來認識朋友，不是相親也不是找交往對象。
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-19.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">泰億 (左):</span>
+                                這種方式最直接，而且線上聊完如果有意思還是要見面聊，不如一開始就見面聊。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="slide">
+                      <div class="lists">
+                        <ul>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-20.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">定廉 (左):</span>
+                                見面才能看到更多的細節，畢竟以後也要生活一輩子，不用害怕見面聊，勇敢踏出第一步！
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="card-sty8">
+                              <div class="img-box">
+                                <img src="images/index6/feedback-21.jpg" alt="">
+                              </div>
+                              <div class="text-box">
+                                <span class="up">Sophia (右):</span>
+                                整個系統規劃是以見面聊為前提，有安全配套，讓身為女生的我，感到很受保護而且友善。
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                  </div>
+                </div>
+                <a id="feedback_laptop_prev" class="control prev"></a>
+                <a id="feedback_laptop_next" class="control next"></a>
+                <ul class="dotsList"></ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- end 1460 電腦版 -->
+
+        <!-- 767 手機版 -->
+        <div class="mobile-display-block">
+          <div class="feedback_mobile_block">
+
+            <div id="feedback_mobile_Slider" class="feedback-slider slider-sty1">
+              <div class="wrapper">
+                <div id="feedback_mobile_Slides" class="slides">
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-1.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">向榮 (右):</span>
+                              三次見面聊的經驗都不錯，可以專注在一對一的互動上，很適合我這種不擅長線上聊天的人。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-2.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">莊敏 (左):</span>
+                              我們都認同不用訊息聊天、直接見面的方式，感謝約會餐廳的代訂服務，對女生比較安全。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-3.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">彩玲 (左):</span>
+                              見面聊比較踏實，可以了解對方是否真實、有誠意，體驗後感覺很輕鬆、也不浪費彼此時間。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-4.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">雅如 (左):</span>
+                              對於一開始就約見面聊，蠻期待的也很開心，因為見面可以看得到對方，線上聊沒有現場感。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-5.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">佳儒 (左):</span>
+                              我個人比較喜歡有溫度的真實相處，見面前好好看一下配對報告，可以讓聊天的話題多好多。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-6.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">明軒、冠伶:</span>
+                              見到本人可以更實際地了解對方，安排見面的餐廳很棒，也很安全，可以帶朋友去，減少顧慮。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-7.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">濠隆 (左):</span>
+                              線上聊容易有距離感、尷尬，內向者很難更進一步，實際見面後，覺得比想像中更容易有交集。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-8.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">少培 (左):</span>
+                              見面聊真的最準，網路聊天太多照騙，還有一些很會線上聊，見面才發現無法有好感。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-9.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">佑甄 (右):</span>
+                              見面聊無法偽裝比較不浪費時間，我用心理學報告找出共同興趣，發現很好聊。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-10.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">恩琦 (左):</span>
+                              十分嚴謹和安全的online dating，讓我很有安全感，見面互動可以更加真實認識一個人。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-12.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">郁富 (左):</span>
+                              剛碰面時會緊張，後來就能放輕鬆認識，我喜歡面對面的互動，有些東西隔著網路無法知道。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-13.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">蓮如 (左):</span>
+                              有兼顧安全及會員品質，餐廳都在熱鬧地點滿安全的，對象有一定的素質，也都有話題可聊。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-14.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">子堯 (右):</span>
+                              見面的感覺不錯，能當面瞭解對方的真實性，也能快速找到話題，因為平台已提供對方的情況。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-15.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">玖慧 (左):</span>
+                              我比較喜歡看到真人，線上聊難猜彼此真實想法，第一次就見面（直球對決）很乾脆很坦然。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-16.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">湘羽 (左):</span>
+                              聊過後覺得很真實，見面看得到表情、聽得到語氣，話題或節奏更有彈性且能及時回應。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-17.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">聖果 (左):</span>
+                              我喜歡見面聊，因為不管是情緒上還是感受上，見面更能有連接，網絡聊天好累好沒用。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-18.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">珈榮 (左):</span>
+                              直接見面聊最有效率，而且要保持平常心，要當成是來認識朋友，不是相親也不是找交往對象。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-19.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">泰億 (左):</span>
+                              這種方式最直接，而且線上聊完如果有意思還是要見面聊，不如一開始就見面聊。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-20.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">定廉 (左):</span>
+                              見面才能看到更多的細節，畢竟以後也要生活一輩子，不用害怕見面聊，勇敢踏出第一步！
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+                  <span class="slide">
+                    <div class="lists">
+                      <ul>
+                        <li>
+                          <div class="card-sty8">
+                            <div class="img-box">
+                              <img src="images/index6/feedback-21.jpg" alt="">
+                            </div>
+                            <div class="text-box">
+                              <span class="up">Sophia (右):</span>
+                              整個系統規劃是以見面聊為前提，有安全配套，讓身為女生的我，感到很受保護而且友善。
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </span>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- end 767 手機版 -->
+
+      </section>
+      <!-- end 21 個見面後的感想 -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+      <!-- banner -->
+      <section class="ready-padding">
+        <div class="ready-wrapper">
+          <div class="ready-block block-sty2 bg-block-sty2">
+            <div class="content">
+              <h3 class="title">準備好了嗎？</h3>
+              <p class="lead">讓我們幫你找到<br class="sp-display-block">內外都契合的另一半！</p>
+              <div class="btn-box">
+                <a href="#" class="button btn-sty1">
+                  開始心理學測驗 <span class="txt-small">(10分鐘)</span>
+                </a>
+                <button type="button" class="button btn-sty3 exampleOpenBtn">看報告範例</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end banner -->
+
+      <div class="pt-4 pb-3 sp-pb-5 sp-pt-0"></div>
+
+      <!-- 文案區 -->
+      <section>
+        <header class="header-sty2">
+          <h2 class="title">關於 MeetTheOne</h2>
+        </header>
+        <div class="pt-2 pb-2 sp-pt-0"></div>
+        <div class="article-padding">
+          <div class="article-wrapper">
+            <article class="article-box">
+              <p>
+                為了讓可遇而不可求的靈魂伴侶，成為可以遇見、可以追求的真實幸福，我們集合一群心理學家，用三年整理全世界成熟、有效的心理學研究，找到幸福婚姻的關鍵因子，演算法可以過濾95%的不適人選，讓婚姻、愛情少走很多冤枉路，提供實體一對一的約會、聯誼、相親、婚友服務。
+                <br><br>
+                服務所使用的心理測驗，都是依據心理學理論開發的有效量表，其中《愛之語》為紐約時報暢銷書排行榜冠軍書，全銷量超過1000萬冊；《愛情風格測驗》由高雄師大諮商心理所卓紋君教授研發。
+                <br><br>
+                以見面為前提的互動模式，參考美國西北大學、加州大學(UCLA)、羅徹斯特大學心理學家的共同研究：更早從線上聊天走向實體見面，可幫助雙方降低錯誤期待，並提早判斷是否值得繼續發展。
+                <br><br>
+                青春有限，幸福無價，讓MeetTheOne透過心理學，陪你更認識愛情，也更靠近彼此。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- end 文案區 -->
+
+      <div class="pt-5 pb-5"></div>
+
+    </section>
+
+  </div><!-- main END -->
+  <!--Consider makes dummy_footer to be visible as jQuery does not guarantee offset() of hidden elements-->
+  <div id="dummy_footer" style="/*visibility:hidden;*/ position:relative; height:1px; width:100%"></div>
+  <div id="footer">
+    <div class="footerCont">
+      <ul class="footerMore CGt">
+        <li><a href="static_about.php"><i class="icon_ft_about"></i>關於我們</a></li>
+        <li><a href="static_qa.php"><i class="icon_ft_queation"></i>常見問題</a></li>
+        <!-- <li><a href="static_skill.php"><i class="icon_ft_meetchat"></i>聊天技巧</a></li> -->
+        <li><a href="static_contact.php"><i class="icon_ft_contact"></i>連絡我們</a></li>
+        <li><a href="static_rule.php"><i class="icon_ft_uselaw"></i>使用條款</a></li>
+        <li><a href="static_privacy.php"><i class="icon_ft_private"></i>隱私權政策</a></li>
+      </ul>
+      <ul class="copy">
+        <li>
+          <p>版權所有 © 2018 闌珊處網路股份有限公司</p><a href="" class="line"></a><a href="https://www.facebook.com/meettheone1"
+            target="_blank" class="fb"></a><a href="https://medium.com/meettheone" target="_blank" class="medium"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="backTop"></div>
+  <!-- Loader
+<div class="loadPad"><div class="loader_f"></div></div>  -->
+
+  <div class="pop-sty-2">
+    <div class="popBlock see-example">
+      <div class="contentBox">
+        <ul>
+          <li class="title">你想看哪一種報告範例？</li>
+          <li class="content">
+            <div class="btn-box ta-C">
+              <a href="example/mypairreport_01fit_example.php" class="btn-button btn-blue">給男生的</a>
+              <a href="example/mypairreport_01fit_example.php" class="btn-button btn-blue">給女生的</a>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="close-btn popCloseBtn">
+          <img src="images/abby/7/close-icon.png" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min-2.2.4.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.touchwipe.min.js"></script>
+  <script type="text/javascript" src="js/clipboard.js"></script>
+  <script type="text/javascript" src="js/at_cage.js"></script>
+
+  <!-- index6 JS -->
+  <script type="text/javascript" src="js/index6/index6.js"></script>
+
+  <!-- abby JS -->
+  <script type="text/javascript" src="js/abby/abby_example.js"></script>
+
+  <script>
+    $(window).load(function () {
+      var Gww = $(window).width(),
+        $pagePad = $('.pageMenu'),
+        $pageMenu = $('.pageMenu > ul:first-child'),
+        $pageMenuList = $pageMenu.find('li'),
+        $pageMenuLi_w = $pageMenuList.width(),
+        $pageMenu_w = 0,
+        $limit = 0;
+      for (var i = 0; i < $pageMenuList.length; i++) {
+        $pageMenu_w += $pageMenuList.eq(i).width();
+        $limit = $pageMenu_w - Gww;
+      }
+      if ($limit > 0) {
+        $pagePad.addClass('wipeLR');
+        $('.pageMenu ul.nav').addClass('left');
+        $pageMenu.css({
+          'width': $pageMenu_w + 50
+        });
+        $('.pageMenu ul.nav').click(function () {
+          if ($(this).hasClass('left')) {
+            pageCtrl('Left');
+          } else {
+            pageCtrl('Right');
+          }
+        });
+        $pageMenu.touchwipe({
+          wipeLeft: function () {
+            pageCtrl('Left')
+          },
+          wipeRight: function () {
+            pageCtrl('Right')
+          },
+          preventDefaultEvents: true
+        });
+      } else {
+        $pageMenu.css({
+          'text-align': 'center'
+        });
+      }
+
+      function pageCtrl(distan) {
+        var $now = parseInt($pageMenu.css('margin-left'));
+        if (distan === 'Left' && $now >= (0 - $limit)) {
+          $('.pageMenu ul.nav').removeClass('left').addClass('right');
+          $pageMenu.stop().animate({
+            marginLeft: Gww - $pageMenu_w - 50
+          });
+        } else if (distan === 'Right' && $now < 0) {
+          $('.pageMenu ul.nav').removeClass('right').addClass('left');
+          $pageMenu.stop().animate({
+            marginLeft: 0
+          });
+        }
+      }
+      $('.articleSelectPad > p').click(function () {
+        $(this).toggleClass('selected');
+      });
+    })
+    $(document).ready(function () {
+      $('.off_read').addClass('active');
+      $('.subHeader').find('li').eq(3).addClass('active');
+    });
+
+    var clipboard = new Clipboard('.getLink');
+
+    clipboard.on('success', function (e) {
+      alert('複製成功')
+    });
+
+    clipboard.on('error', function (e) {
+      alert('複製失敗')
+    });
+
+    // 看報告範例 - 開啟和關閉
+    jQuery(document).ready(function ($) {
+      // 開啟
+      $('.exampleOpenBtn').click(function () {
+        $('.popBlock.see-example').fadeIn();
+      });
+      // 關閉
+      $('.popCloseBtn').click(function () {
+        $('.popBlock').fadeOut();
+      });
+      // $(document).click(function (e) {
+      //   if (e.target.className.includes('popBlock')) {
+      //     $('.popBlock').fadeOut();
+      //   }
+      // })
+    });
+  </script>
+</body>
+
+</html>

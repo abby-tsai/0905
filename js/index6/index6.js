@@ -22,25 +22,25 @@ let feedback_laptop_Slider = document.getElementById('feedback_laptop_Slider'),
 slider(feedback_laptop_Slider, feedback_laptop_SliderItems, feedback_laptop_prev, feedback_laptop_next, feedback_laptop_SlidesLi, feedback_laptop_Dots);
 // end 21個見面後的感想 輪播 - 1920px 電腦版
 
-// 21對成功案例 輪播 - 767px 手機版
-let success_mobile_Slider = document.getElementById('success_mobile_Slider'),
-  success_mobile_SliderItems = document.getElementById('success_mobile_Slides'),
-  success_mobile_prev = document.getElementById('success_mobile_prev'),
-  success_mobile_next = document.getElementById('success_mobile_next'),
-  success_mobile_SlidesLi = document.querySelectorAll("#success_mobile_Slides .slide .lists > ul > li"),
-  success_mobile_Dots = document.querySelector("#success_mobile_Slider .dotsList");
-slider(success_mobile_Slider, success_mobile_SliderItems, success_mobile_prev, success_mobile_next, success_mobile_SlidesLi, success_mobile_Dots);
-// end 21對成功案例 輪播 - 767px 手機版
+// // 21對成功案例 輪播 - 767px 手機版
+// let success_mobile_Slider = document.getElementById('success_mobile_Slider'),
+//   success_mobile_SliderItems = document.getElementById('success_mobile_Slides'),
+//   success_mobile_prev = document.getElementById('success_mobile_prev'),
+//   success_mobile_next = document.getElementById('success_mobile_next'),
+//   success_mobile_SlidesLi = document.querySelectorAll("#success_mobile_Slides .slide .lists > ul > li"),
+//   success_mobile_Dots = document.querySelector("#success_mobile_Slider .dotsList");
+// slider(success_mobile_Slider, success_mobile_SliderItems, success_mobile_prev, success_mobile_next, success_mobile_SlidesLi, success_mobile_Dots);
+// // end 21對成功案例 輪播 - 767px 手機版
 
-// 21個見面後的感想 輪播 - 767px 手機版
-let feedback_mobile_Slider = document.getElementById('feedback_mobile_Slider'),
-  feedback_mobile_SliderItems = document.getElementById('feedback_mobile_Slides'),
-  feedback_mobile_prev = document.getElementById('feedback_mobile_prev'),
-  feedback_mobile_next = document.getElementById('feedback_mobile_next'),
-  feedback_mobile_SlidesLi = document.querySelectorAll("#feedback_mobile_Slides .slide .lists > ul > li"),
-  feedback_mobile_Dots = document.querySelector("#feedback_mobile_Slider .dotsList");
-slider(feedback_mobile_Slider, feedback_mobile_SliderItems, feedback_mobile_prev, feedback_mobile_next, feedback_mobile_SlidesLi, feedback_mobile_Dots);
-// end 21個見面後的感想 輪播 - 767px 手機版
+// // 21個見面後的感想 輪播 - 767px 手機版
+// let feedback_mobile_Slider = document.getElementById('feedback_mobile_Slider'),
+//   feedback_mobile_SliderItems = document.getElementById('feedback_mobile_Slides'),
+//   feedback_mobile_prev = document.getElementById('feedback_mobile_prev'),
+//   feedback_mobile_next = document.getElementById('feedback_mobile_next'),
+//   feedback_mobile_SlidesLi = document.querySelectorAll("#feedback_mobile_Slides .slide .lists > ul > li"),
+//   feedback_mobile_Dots = document.querySelector("#feedback_mobile_Slider .dotsList");
+// slider(feedback_mobile_Slider, feedback_mobile_SliderItems, feedback_mobile_prev, feedback_mobile_next, feedback_mobile_SlidesLi, feedback_mobile_Dots);
+// // end 21個見面後的感想 輪播 - 767px 手機版
 
 function slider(wrapper, items, prev, next, slidesLi, dots) {
   let

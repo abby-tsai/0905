@@ -22919,11 +22919,12 @@ body.open_lightbox {
 .slider-sty1 .lists ul {
   display: flex;
   column-gap: 45px;
+  margin-left: 1px;
 }
 
 .slider-sty1 .lists li {
   padding: 0 2px 30px;
-  width: 100%;
+  width: 370px;
 }
 
 .animate-overflow {
@@ -24264,12 +24265,32 @@ body.open_lightbox {
     font-size: 50px;
     left: calc(50% + 28px);
   }
+
+  .slider-sty1 .lists ul {
+    display: block;
+    font-size: 0;
+  }
+
+  .slider-sty1 .lists li {
+    width: calc(100% / 3 - 30px);
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 45px;
+  }
+
+  .slider-sty1 .lists li:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 1139px) {
-
   .slider-sty1 .lists ul {
     column-gap: 20px;
+  }
+
+  .slider-sty1 .lists li {
+    width: calc(100% / 3 - 14px);
+    margin-right: 20px;
   }
 
   .success_block .card-sty8 .text-box {
@@ -25250,6 +25271,8 @@ body.open_lightbox {
 
   .slider-sty1 .lists li {
     padding-bottom: 20px;
+    width: 100%;
+    margin-right: 0;
   }
 
   .dotsList {
