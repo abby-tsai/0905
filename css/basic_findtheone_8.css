@@ -22739,7 +22739,7 @@ li>a.btn_orange {
   font-weight: 700;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Sans TC', sans-serif !important;
 }
 
 .video-block-sty-1 .video-text .title .txt-small {
