@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://rawcdn.githack.com/akzhy/scrollbot/e0afe1fbb5b1f6b849326337a8a5f349d34fa622/js/scrollbot.min.js" type="text/javascript"></script>
+
+  <style>
+                * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html,body,#wrapper {
+                height: 100%;
+            }
+
+            body {
+                background: #fff;
+                font-family: "Poppins",sans-serif;
+                text-align: center;
+            }
+
+            h1,h2,h3 {
+                font-weight: bold;
+                position: relative;
+            }
+
+            h1:after,h2:after,h3:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 2px;
+                background: #202020;
+                bottom: 0;
+                left: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #2196f3;
+            }
+
+            p {
+                font-size: 1em;
+                margin: 10px 0;
+                line-height: 1.5em;
+                color: #777;
+            }
+
+            .scrolls {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 3em;
+                text-align: left;
+                padding: 5px 20px;
+            }
+
+            .title a {
+                color: #f44336;
+            }
+
+            .custom-scroll {
+                max-width: 500px;
+                width: 80%;
+                height: 500px;
+                padding: 20px;
+                text-align: left;
+                background: #fff;
+                margin: 25px;
+                display: inline-block;
+                overflow: auto;
+                box-shadow: 0px 2px 20px -10px;
+                border-radius: 15px;
+            }
+
+            .custom-scroll img {
+                width: 100%;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 10px;
+                border: 1px solid #333;
+                font-size: 2em;
+                margin: 1em;
+                cursor: pointer;
+            }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="scrolls">
+        <div class="custom-scroll custom-scroll">
+          <h1>Default Style</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent
+            sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+          <img src="https://unsplash.it/300?image=0" alt="image">
+          <p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque
+            eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+          <img src="https://unsplash.it/300?image=2" alt="image">
+          <p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus.
+            Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar
+            justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+          <img src="https://unsplash.it/300?image=3" alt="image">
+          <p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat
+            pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque
+            vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra
+            libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+          <img src="https://unsplash.it/300?image=4" alt="image">
+          <p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque
+            velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec
+            mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+        </div>
+        <div class="custom-scroll custom-scroll-1">
+          <h1>Custom Style 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent
+            sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+          <img src="https://unsplash.it/300?image=12" alt="image">
+          <p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque
+            eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+          <img src="https://unsplash.it/300?image=50" alt="image">
+          <p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus.
+            Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar
+            justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+          <img src="https://unsplash.it/300?image=34" alt="image">
+          <p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat
+            pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque
+            vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra
+            libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+          <img src="https://unsplash.it/300?image=68" alt="image">
+          <p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque
+            velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec
+            mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+        </div>
+        <div class="custom-scroll custom-scroll-2">
+          <h1>Custom Style 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent
+            sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+          <img src="https://unsplash.it/300?image=0" alt="image">
+          <p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque
+            eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+          <img src="https://unsplash.it/300?image=2" alt="image">
+          <p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus.
+            Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar
+            justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+          <img src="https://unsplash.it/300?image=3" alt="image">
+          <p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat
+            pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque
+            vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra
+            libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+          <img src="https://unsplash.it/300?image=4" alt="image">
+          <p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque
+            velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec
+            mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+        </div>
+        <div class="custom-scroll custom-scroll-3">
+          <h1>Custom Style 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent
+            sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+          <img src="https://unsplash.it/300?image=1" alt="image">
+          <p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque
+            eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+          <img src="https://unsplash.it/300?image=50" alt="image">
+          <p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus.
+            Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar
+            justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+          <img src="https://unsplash.it/300?image=34" alt="image">
+          <p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat
+            pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque
+            vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra
+            libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+          <img src="https://unsplash.it/300?image=68" alt="image">
+          <p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque
+            velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec
+            mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+        </div>
+        <div class="custom-scroll custom-scroll-4">
+          <h1>Custom Style 4</h1>
+          <span class="btn" id="destroy">Click here to Destroy me</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris augue diam, scelerisque sed faucibus at, aliquet sed diam. Pellentesque egestas pellentesque tortor in lacinia. Morbi quis rhoncus orci, ac faucibus tortor. Nulla facilisi. Praesent
+            sollicitudin fringilla feugiat. Etiam justo erat, faucibus nec eleifend sed, ullamcorper eu nulla. Donec sed sapien hendrerit, volutpat augue eget, ullamcorper libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum nec congue ante. Nam quis massa sit amet arcu sollicitudin aliquet vel sed sem.</p>
+          <img src="https://unsplash.it/300?image=12" alt="image">
+          <p>Sed eget mollis ipsum, a luctus massa. Curabitur scelerisque non lorem nec mollis. Nam vulputate arcu eget ultrices posuere. Donec id fermentum enim. Nulla vel cursus mi, at mollis lacus. Donec ultricies pretium neque non malesuada. Quisque
+            eget diam libero. Fusce tempus, turpis et imperdiet hendrerit, quam sapien volutpat sem, ac viverra sapien justo vel tellus. Donec non augue cursus, porttitor libero et, varius odio. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Etiam congue id risus id aliquet. Phasellus sit amet pharetra felis, ac porta est.</p>
+          <img src="https://unsplash.it/300?image=50" alt="image">
+          <p>Aliquam erat volutpat. Phasellus euismod, eros a convallis blandit, sem turpis volutpat libero, eu vulputate dui libero sed ante. Mauris sed nisl nisl. Suspendisse potenti. Nulla purus arcu, bibendum eu ipsum in, viverra pellentesque purus.
+            Donec luctus purus vel nibh commodo laoreet volutpat vitae leo. Pellentesque hendrerit massa vel massa dignissim hendrerit. Quisque accumsan ultricies lorem, ac efficitur urna finibus nec. Nulla pharetra nisi tortor, fermentum pulvinar
+            justo posuere nec. Vivamus in enim vel neque luctus condimentum sed imperdiet massa. In hac habitasse platea dictumst.</p>
+          <img src="https://unsplash.it/300?image=34" alt="image">
+          <p>Integer mauris elit, pellentesque et purus dictum, convallis ullamcorper massa. Vivamus sed felis sit amet lectus malesuada facilisis. Pellentesque aliquam felis lorem, sit amet vestibulum leo tristique vitae. Quisque pharetra turpis eu erat
+            pellentesque lobortis nec nec est. Quisque ac nulla bibendum, feugiat lacus sit amet, elementum nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc purus leo, sodales a viverra vitae, pellentesque
+            vel enim. Phasellus dapibus nisi quis fringilla volutpat. Curabitur sed mauris sed mauris eleifend vulputate. Pellentesque nunc massa, pulvinar id sodales ut, dignissim ut lectus. In rutrum, massa non porta consequat, ipsum eros pharetra
+            libero, a faucibus leo risus nec nulla. In pellentesque ut augue non tristique.</p>
+          <img src="https://unsplash.it/300?image=68" alt="image">
+          <p>Ut mattis, magna sed mattis tristique, ex nunc lacinia elit, non aliquet nisi ante at nulla. Aliquam erat volutpat. Nullam lobortis est nec nunc malesuada, eget vulputate ex consectetur. Vestibulum varius mollis dapibus. In congue scelerisque
+            velit, vitae rutrum purus sagittis vitae. Fusce id tristique nibh, in efficitur odio. Aenean ac augue quis lectus hendrerit pharetra. Vestibulum gravida massa libero, quis lobortis leo sollicitudin in. Donec vestibulum eleifend enim nec
+            mattis. Sed ut sodales ligula, sed congue ligula. Mauris porta efficitur est ut porta. Sed pulvinar odio ut tempor bibendum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 客製 scrollbar（為了讓ios系統的scrollbar一直出現）
+
+    Scrollbot = function(t, i) {
+      this.orgPar = document.querySelector(t), (!this.isIE() || this.isIE() && this.isIE() > 9) && this.init(t, i)
+    }, Scrollbot.prototype.init = function(t, i) {
+      var s = this;
+      this.sbw = void 0 == i ? 5 : i, this.scrollSpeed = 200, this.parContent = this.orgPar.innerHTML, this.orgPar.innerHTML = "", this.newPar = document.createElement("div"), this.sbContainer = document.createElement("div"), this.scrollBarHolder = document.createElement("div"), this.scrollBar = document.createElement("div"), this.inP = document.createElement("div"), this.newPar.className = "scrollbot-outer-parent", this.scrollBarHolder.className = "scrollbot-scrollbar-holder", this.scrollBar.className = "scrollbot-scrollbar", this.inP.className = "scrollbot-inner-parent", this.newPar.style.position = "relative", this.newPar.style.paddingRight = this.sbw + "px", this.newPar.style.zIndex = "9999999", this.newPar.style.height = "100%", this.newPar.style.overflow = "hidden", this.inPWidth = this.orgPar.clientWidth - this.sbw + "px", this.inP.style.cssText = "height:100%;overflow-y:auto;overflow-x:hidden;padding-right:" + (this.sbw + 20) + "px;width:100%;box-sizing:content-box;", this.inP.innerHTML = this.parContent, this.inP.style.height = "100%", this.newPar.appendChild(this.inP), this.scrollBarHolder.appendChild(this.scrollBar), this.newPar.appendChild(this.scrollBarHolder), this.orgPar.appendChild(this.newPar), this.sbHeight = 100 * this.inP.clientHeight / this.inP.scrollHeight, this.mdown = !1, this.customHeight = !1, this.scrollElement = this.inP, this.prevHeight = this.inP.scrollHeight, this.onScroll = function(t) {
+        s.onScrollF = t
+      }, this.sB = {
+        width: s.sbw + "px",
+        height: s.sbHeight + "%",
+        position: "absolute",
+        right: 0,
+        top: 0,
+        backgroundColor: "#444444",
+        borderRadius: "15px"
+      }, this.sBH = {
+        width: s.sbw + "px",
+        height: "100%",
+        position: "absolute",
+        right: 0,
+        top: 0,
+        backgroundColor: "#ADADAD",
+        borderRadius: "15px"
+      };
+      for (var e in this.sB) this.scrollBar.style[e] = this.sB[e];
+      for (var e in this.sBH) this.scrollBarHolder.style[e] = this.sBH[e];
+      this.inP.addEventListener("scroll", function() {
+        s.scrollBar.style.top = 100 * s.inP.scrollTop / s.inP.scrollHeight + (s.sbHeight - parseFloat(s.sB.height)) * s.inP.scrollTop / (s.inP.scrollHeight - s.inP.clientHeight) + "%", "onScrollF" in s && s.onScrollF()
+      }), this.scrollBarHolder.onmousedown = function(t) {
+        if (t.target == this) {
+          var i = 100 * (t.pageY - s.scrollBarHolder.getBoundingClientRect().top) / s.scrollBarHolder.clientHeight;
+          console.log(i), s.setScroll(s.inP.scrollHeight * i / 100, s.scrollSpeed)
+        }
+      }, this.scrollBar.onmousedown = function(t) {
+        return s.mdown = !0, s.posCorrection = t.pageY - s.scrollBar.getBoundingClientRect().top, s.btmCorrection = 100 * s.scrollBar.clientHeight / s.newPar.clientHeight, !1
+      }, this.orgPar.onmouseup = function() {
+        s.mdown = !1
+      }, this.orgPar.onmousemove = function(t) {
+        if (!s.mdown) return !1;
+        document.selection ? document.selection.empty() : window.getSelection().removeAllRanges(), s.relY = t.pageY - s.newPar.getBoundingClientRect().top, s.pC = 100 * (s.relY - s.posCorrection) / s.newPar.clientHeight, s.pC >= 0 && s.pC + s.btmCorrection <= 100 ? (s.scrollBar.style.top = s.pC + "%", s.inP.scrollTop = (parseFloat(s.scrollBar.style.top) - (s.sbHeight - parseFloat(s.sB.height)) * s.inP.scrollTop / (s.inP.scrollHeight - s.inP.clientHeight)) * s.inP.scrollHeight / 100) : s.pC < 0 && parseFloat(s.scrollBar.style.top) > 0 && (s.scrollBar.style.top = "0%", s.inP.scrollTop = 0), "onScrollF" in s && s.onScrollF()
+      }, setInterval(function() {
+        s.inP.scrollHeight != s.prevHeight && s.refresh()
+      }, 400)
+    }, Scrollbot.prototype.destroy = function() {
+      this.orgPar.innerHTML = this.parContent, this.orgPar.style.overflow = "auto", this.init = null
+    }, Scrollbot.prototype.isIE = function() {
+      var t = navigator.userAgent.toLowerCase();
+      return -1 != t.indexOf("msie") && parseInt(t.split("msie")[1])
+    }, Scrollbot.prototype.setStyle = function(t, i) {
+      if (void 0 != t) {
+        t.width = this.sbw, "height" in t && (this.customHeight = !0, t.height = 100 * parseFloat(t.height) / this.newPar.clientHeight + "%");
+        for (var s in t) this.sB[s] = t[s], this.scrollBar.style[s] = t[s]
+      }
+      if (void 0 != i) {
+        i.width = this.sbw;
+        for (var s in i) this.sBH[s] = i[s], this.scrollBarHolder.style[s] = i[s]
+      }
+      return this
+    }, Scrollbot.prototype.refresh = function() {
+      this.sbHeight = 100 * this.inP.clientHeight / this.inP.scrollHeight, this.sbHeight >= 100 ? this.scrollBarHolder.style.display = "none" : this.scrollBarHolder.style.display = "block", this.sbHeight = 100 * this.inP.clientHeight / this.inP.scrollHeight, this.sB.height = this.customHeight ? this.sB.height : this.sbHeight + "%", this.inP.scrollHeight > this.inP.clientHeight && (this.scrollBar.style.height = this.sB.height)
+    }, Scrollbot.prototype.setScroll = function(t, i) {
+      var s = this;
+      (void 0 == i || i <= 0) && (i = 500), t >= this.inP.scrollHeight - this.inP.clientHeight && (t = this.inP.scrollHeight - this.inP.clientHeight);
+      var e = (t - this.inP.scrollTop) / i * 10;
+      setTimeout(function() {
+        s.inP.scrollTop += e, Math.abs(t - s.inP.scrollTop) < 5 || s.setScroll(t, i - 10)
+      }, 10)
+    };
+
+    new Scrollbot("#page-wrapper");
+
+    var custom = new Scrollbot(".custom-scroll");
+
+    custom2 = new Scrollbot(".custom-scroll-1", 10).setStyle({
+      "background": "#202020",
+      "z-index": "2"
+    }, {
+      "background": "rgba(0,0,0,0)"
+    });
+    var psuedo = document.createElement("div");
+    psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+    custom2.scrollBarHolder.appendChild(psuedo);
+
+    var custom3 = new Scrollbot(".custom-scroll-2");
+    custom3.setStyle({
+      height: 2
+    });
+    var onscrollfollower = document.createElement("div");
+    onscrollfollower.style.width = "100%";
+    onscrollfollower.style.height = "100%";
+    onscrollfollower.style.backgroundColor = "#222222";
+    onscrollfollower.style.position = "absolute";
+    onscrollfollower.style.bottom = "100%";
+    onscrollfollower.style.right = 0;
+    custom3.scrollBarHolder.appendChild(onscrollfollower);
+    custom3.onScroll(function() {
+      onscrollfollower.style.bottom = 100 - parseFloat(this.scrollBar.style.top) + "%";
+    })
+
+    var custom4 = new Scrollbot(".custom-scroll-3", 10).setStyle({
+      "background": "#202020",
+      "z-index": "2",
+      "border-radius": "50%",
+      "height": "10px"
+    }, {
+      "background": "rgba(0,0,0,0)"
+    });
+    var psuedo = document.createElement("div");
+    psuedo.style.cssText = "height:100%;width:2px;left:4px;background:#808080;position:absolute;z-index:1";
+    custom4.scrollBarHolder.appendChild(psuedo);
+
+    var custom6 = new Scrollbot(".custom-scroll-4");
+
+    document.querySelector("#destroy").onclick = function() {
+      custom6.destroy();
+    }
+    // end 客製 scrollbar（為了讓ios系統的scrollbar一直出現）
+  </script>
+</body>
+
+</html>
