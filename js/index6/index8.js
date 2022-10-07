@@ -590,10 +590,10 @@ $(document).ready(function () {
 // end 看報告範例 - 開啟和關閉 *------------------
 
 
-// 新增 Noto Sans Tc 字型 *------------------
-var link = document.createElement("link");
-link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap";
-var linkTags = document.querySelectorAll("link");
-var firstCssTag = document.getElementsByTagName("link")[0];
-firstCssTag.parentNode.appendChild(link);
-// end 新增 Noto Sans Tc 字型 *------------------
+// // 新增 Noto Sans Tc 字型 *------------------
+// var link = document.createElement("link");
+// link.href = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap";
+// var linkTags = document.querySelectorAll("link");
+// var firstCssTag = document.getElementsByTagName("link")[0];
+// firstCssTag.parentNode.appendChild(link);
+// // end 新增 Noto Sans Tc 字型 *------------------
