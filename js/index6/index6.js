@@ -620,6 +620,6 @@ firstCssTag.parentNode.appendChild(link);
 
 
 // 客製 scrollbar（為了讓ios系統的scrollbar一直出現）
-scrollView.showsHorizontalScrollIndicator = false 
-scrollView.showsVerticalScrollIndicator = false
+scrollView.showsHorizontalScrollIndicator = true 
+scrollView.showsVerticalScrollIndicator = true
 // end 客製 scrollbar（為了讓ios系統的scrollbar一直出現）
