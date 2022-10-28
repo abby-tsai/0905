@@ -418,10 +418,12 @@ var exitFullscreen = function () {
 function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
   if (android == true && window.innerWidth < 768) {
     // 裝置是 Android
+    lightboxTarget.classList.add('is-android');
     lightboxTarget.classList.remove('is-ios');
     requestFullscreen(lightboxBlock);
   } else if (iOS == true) {
     // 裝置是 iOS
+    lightboxTarget.classList.remove('is-android');
     lightboxTarget.classList.add('is-ios');
     doOnOrientationChange(lightboxTarget);
   }

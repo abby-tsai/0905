@@ -22638,6 +22638,9 @@ li>a.btn_orange {
 .lightboxTarget .content-box iframe {
   width: 100vw;
   height: 100vh;
+}
+
+.lightboxTarget.is-android .content-box iframe {
   position: absolute;
   z-index: 9;
 }
