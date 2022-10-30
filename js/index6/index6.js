@@ -243,17 +243,31 @@ let video_1_lightboxTarget = video_1.querySelector(".lightboxTarget")
 let video_1_lightboxClose = video_1.querySelector(".lightboxClose")
 let video_1_lightboxBlock = video_1.querySelector(".videoLightboxBlock")
 
+// video 2 - 短板
 let video_2 = document.querySelector("#video-2")
 let video_2_btnLightbox = video_2.querySelector(".btnLightbox")
 let video_2_lightboxTarget = video_2.querySelector(".lightboxTarget")
 let video_2_lightboxClose = video_2.querySelector(".lightboxClose")
 let video_2_lightboxBlock = video_2.querySelector(".videoLightboxBlock")
 
+// video 2 - 完整版
+let video_2_btnLightbox_full = video_2.querySelector(".btnLightbox_full")
+let video_2_lightboxTarget_full = video_2.querySelector(".lightboxTarget_full")
+let video_2_lightboxClose_full = video_2.querySelector(".lightboxClose_full")
+let video_2_lightboxBlock_full = video_2.querySelector(".videoLightboxBlock_full")
+
+// video 3 - 短板
 let video_3 = document.querySelector("#video-3")
 let video_3_btnLightbox = video_3.querySelector(".btnLightbox")
 let video_3_lightboxTarget = video_3.querySelector(".lightboxTarget")
 let video_3_lightboxClose = video_3.querySelector(".lightboxClose")
 let video_3_lightboxBlock = video_3.querySelector(".videoLightboxBlock")
+
+// video 3 - 完整版
+let video_3_btnLightbox_full = video_3.querySelector(".btnLightbox_full")
+let video_3_lightboxTarget_full = video_3.querySelector(".lightboxTarget_full")
+let video_3_lightboxClose_full = video_3.querySelector(".lightboxClose_full")
+let video_3_lightboxBlock_full = video_3.querySelector(".videoLightboxBlock_full")
 
 // 判斷當前裝置
 let ua = navigator.userAgent;
@@ -264,7 +278,9 @@ function onYouTubeIframeAPIReady() {
 
   var player_1;
   var player_2;
+  var player_2_full;
   var player_3;
+  var player_3_full;
 
   player_1 = new YT.Player('video_iframe_1', {
     videoId: '8BR3RtL4nNk',
@@ -310,8 +326,52 @@ function onYouTubeIframeAPIReady() {
       }
     }
   });
+  player_2_full = new YT.Player('video_iframe_2_full', {
+    videoId: 'gsnqXt7d1mU',
+    width: '400',
+    height: '400',
+    playerVars: {
+      autoplay: 0, // 自動播放影片
+      controls: 1, // 顯示播放器
+      showinfo: 0, // 隱藏影片標題
+      modestbranding: 1, // 隱藏YouTube Logo
+      loop: 0, // 重覆播放
+      fs: 0, // 隱藏全螢幕按鈕
+      cc_load_policty: 0, // 隱藏字幕
+      iv_load_policy: 3, // 隱藏影片註解
+      autohide: 0, // 影片播放時，隱藏影片控制列
+    },
+    events: {
+      onReady: function (e) {
+        // e.target.mute();      //播放時靜音
+        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+      }
+    }
+  });
   player_3 = new YT.Player('video_iframe_3', {
     videoId: 'aCMFbkb7l80',
+    width: '400',
+    height: '400',
+    playerVars: {
+      autoplay: 0, // 自動播放影片
+      controls: 1, // 顯示播放器
+      showinfo: 0, // 隱藏影片標題
+      modestbranding: 1, // 隱藏YouTube Logo
+      loop: 0, // 重覆播放
+      fs: 0, // 隱藏全螢幕按鈕
+      cc_load_policty: 0, // 隱藏字幕
+      iv_load_policy: 3, // 隱藏影片註解
+      autohide: 0, // 影片播放時，隱藏影片控制列
+    },
+    events: {
+      onReady: function (e) {
+        // e.target.mute();      //播放時靜音
+        // e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+      }
+    }
+  });
+  player_3_full = new YT.Player('video_iframe_3_full', {
+    videoId: '6stlCkUDG_s',
     width: '400',
     height: '400',
     playerVars: {
@@ -369,6 +429,24 @@ function onYouTubeIframeAPIReady() {
     closeVideo_phoneSystem();
   });
 
+  video_2_btnLightbox_full.addEventListener("click", function () {
+    player_2_full.playVideo();
+    video_2_lightboxTarget_full.classList.add('show');
+    if (android == true) {
+      video_2_lightboxTarget_full.classList.remove('show');
+    }
+    video_2_btnLightbox_full.classList.add('active');
+    document.querySelector("body").classList.add('open_lightbox');
+    openVideo_phoneSystem(video_2_lightboxBlock_full, video_2_lightboxTarget_full);
+  });
+  video_2_lightboxClose_full.addEventListener("click", function () {
+    player_2_full.pauseVideo();
+    video_2_lightboxTarget_full.classList.remove('show');
+    video_2_btnLightbox_full.classList.remove('active');
+    document.querySelector("body").classList.remove('open_lightbox');
+    closeVideo_phoneSystem();
+  });
+
   video_3_btnLightbox.addEventListener("click", function () {
     player_3.playVideo();
     video_3_lightboxTarget.classList.add('show');
@@ -386,6 +464,25 @@ function onYouTubeIframeAPIReady() {
     document.querySelector("body").classList.remove('open_lightbox');
     closeVideo_phoneSystem();
   });
+
+  video_3_btnLightbox_full.addEventListener("click", function () {
+    player_3_full.playVideo();
+    video_3_lightboxTarget_full.classList.add('show');
+    if (android == true) {
+      video_3_lightboxTarget_full.classList.remove('show');
+    }
+    video_3_btnLightbox_full.classList.add('active');
+    document.querySelector("body").classList.add('open_lightbox');
+    openVideo_phoneSystem(video_3_lightboxBlock_full, video_3_lightboxTarget_full);
+  });
+  video_3_lightboxClose_full.addEventListener("click", function () {
+    player_3_full.pauseVideo();
+    video_3_lightboxTarget_full.classList.remove('show');
+    video_3_btnLightbox_full.classList.remove('active');
+    document.querySelector("body").classList.remove('open_lightbox');
+    closeVideo_phoneSystem();
+  });
+
 }
 
 // 開啟全螢幕
@@ -416,7 +513,7 @@ var exitFullscreen = function () {
 
 // 點擊播放影片按鈕，判斷裝置
 function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
-  if (android == true && window.innerWidth < 768) {
+  if (android == true) {
     // 裝置是 Android
     lightboxTarget.classList.add('is-android');
     lightboxTarget.classList.remove('is-ios');
@@ -431,7 +528,7 @@ function openVideo_phoneSystem(lightboxBlock, lightboxTarget) {
 
 // 點擊關閉/暫停影片按鈕，判斷裝置
 function closeVideo_phoneSystem() {
-  if (android == true && window.innerWidth < 768) {
+  if (android == true) {
     // 裝置是 Android
     exitFullscreen();
   }
@@ -450,33 +547,45 @@ function doOnOrientationChange() {
       // 手機是橫向
       video_1_lightboxTarget.classList.add('is-landscape');
       video_2_lightboxTarget.classList.add('is-landscape');
+      video_2_lightboxTarget_full.classList.add('is-landscape');
       video_3_lightboxTarget.classList.add('is-landscape');
+      video_3_lightboxTarget_full.classList.add('is-landscape');
 
       if (iOS == true) {
         height = window.innerHeight;
         document.querySelector("#video_iframe_1").style.height = height + "px";
         document.querySelector("#video_iframe_2").style.height = height + "px";
+        document.querySelector("#video_iframe_2_full").style.height = height + "px";
         document.querySelector("#video_iframe_3").style.height = height + "px";
+        document.querySelector("#video_iframe_3_full").style.height = height + "px";
         width = $(window).width();
         document.querySelector("#video_iframe_1").style.width = (width - 100) + "px";
         document.querySelector("#video_iframe_2").style.width = (width - 100) + "px";
+        document.querySelector("#video_iframe_2_full").style.width = (width - 100) + "px";
         document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+        document.querySelector("#video_iframe_3_full").style.width = (width - 100) + "px";
 
         window.addEventListener('resize', () => {
           height = window.innerHeight;
           document.querySelector("#video_iframe_1").style.height = height + "px";
           document.querySelector("#video_iframe_2").style.height = height + "px";
+          document.querySelector("#video_iframe_2_full").style.height = height + "px";
           document.querySelector("#video_iframe_3").style.height = height + "px";
+          document.querySelector("#video_iframe_3_full").style.height = height + "px";
           width = $(window).width();
           document.querySelector("#video_iframe_1").style.width = (width - 100) + "px";
           document.querySelector("#video_iframe_2").style.width = (width - 100) + "px";
+          document.querySelector("#video_iframe_2_full").style.width = (width - 100) + "px";
           document.querySelector("#video_iframe_3").style.width = (width - 100) + "px";
+          document.querySelector("#video_iframe_3_full").style.width = (width - 100) + "px";
         });
         window.addEventListener('scroll', function () {
           let nowHeight = window.innerHeight;
           document.querySelector("#video_iframe_1").style.height = nowHeight + "px";
           document.querySelector("#video_iframe_2").style.height = nowHeight + "px";
+          document.querySelector("#video_iframe_2_full").style.height = nowHeight + "px";
           document.querySelector("#video_iframe_3").style.height = nowHeight + "px";
+          document.querySelector("#video_iframe_3_full").style.height = nowHeight + "px";
         });
       }
       break;
@@ -485,30 +594,42 @@ function doOnOrientationChange() {
       // 手機是直向
       video_1_lightboxTarget.classList.remove('is-landscape');
       video_2_lightboxTarget.classList.remove('is-landscape');
+      video_2_lightboxTarget_full.classList.remove('is-landscape');
       video_3_lightboxTarget.classList.remove('is-landscape');
+      video_3_lightboxTarget_full.classList.remove('is-landscape');
 
       if (iOS == true) {
         document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
         document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_2_full").style.height = "calc(100vh - 250px)";
         document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+        document.querySelector("#video_iframe_3_full").style.height = "calc(100vh - 250px)";
         width = $(window).width();
         document.querySelector("#video_iframe_1").style.width = width + "px";
         document.querySelector("#video_iframe_2").style.width = width + "px";
+        document.querySelector("#video_iframe_2_full").style.width = width + "px";
         document.querySelector("#video_iframe_3").style.width = width + "px";
+        document.querySelector("#video_iframe_3_full").style.width = width + "px";
 
         window.addEventListener('resize', () => {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_2_full").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_3_full").style.height = "calc(100vh - 250px)";
           width = $(window).width();
           document.querySelector("#video_iframe_1").style.width = width + "px";
           document.querySelector("#video_iframe_2").style.width = width + "px";
+          document.querySelector("#video_iframe_2_full").style.width = width + "px";
           document.querySelector("#video_iframe_3").style.width = width + "px";
+          document.querySelector("#video_iframe_3_full").style.width = width + "px";
         });
         window.addEventListener('scroll', function () {
           document.querySelector("#video_iframe_1").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_2").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_2_full").style.height = "calc(100vh - 250px)";
           document.querySelector("#video_iframe_3").style.height = "calc(100vh - 250px)";
+          document.querySelector("#video_iframe_3_full").style.height = "calc(100vh - 250px)";
         });
       }
 
