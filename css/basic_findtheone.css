@@ -18305,19 +18305,19 @@ body .headerBasic>li.btn.android a {
 }
 
 .card-sty4 .img-box {
-  max-width: 120px;
-  margin: 45px auto;
+  max-width: 100px;
+  margin: 45px auto 30px;
 }
 
 .card-sty4 .text-box .title {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 20px;
   font-weight: 500;
   color: var(--colorGreen);
 }
 
 .card-sty4 .text-box .desc {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--colorDark);
 }
@@ -19300,10 +19300,6 @@ body .headerBasic>li.btn.android a {
     margin: 0 -10px;
   }
 
-  .card-sty4 .img-box {
-    max-width: 110px;
-  }
-
   .card-sty1 .text-box .title {
     font-size: 20px;
   }
@@ -19547,17 +19543,11 @@ body .headerBasic>li.btn.android a {
   }
 
   .card-sty4 .img-box {
-    max-width: 100px;
     margin: 0 auto 30px;
   }
 
   .card-sty4 .text-box .title {
-    font-size: 20px;
     margin-bottom: 15px;
-  }
-
-  .card-sty4 .text-box .desc {
-    font-size: 17px;
   }
 
   .card-sty5 .img-box {
@@ -20143,7 +20133,8 @@ body .headerBasic>li.btn.android a {
   .card-sty4 .text-box .title {
     font-size: 18px;
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: 700;
+    -webkit-text-stroke: 0.5px;
   }
 
   .card-sty4 .text-box .desc {
@@ -24062,7 +24053,7 @@ body.open_lightbox {
 }
 
 .step-wrapper {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
